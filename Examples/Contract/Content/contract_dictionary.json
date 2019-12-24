@@ -1,0 +1,74 @@
+[
+  {
+    "Key": "renter",
+    "Value": "John Smith"
+  },
+  {
+    "Key": "owner",
+    "Value": "Samanta Jackson"
+  },
+  {
+    "Key": "address",
+    "Value": "12345 NE 99th Ct, Miami, FL 33333, USA"
+  },
+  {
+    "Key": "people",
+    "Value": "5"
+  },
+  {
+    "Key": "datefrom",
+    "Value": "2019-07-01"
+  },
+  {
+    "Key": "dateto",
+    "Value": "2019-06-30"
+  },
+  {
+    "Key": "bedrooms",
+    "Value": "3"
+  },
+  {
+    "Key": "bathrooms",
+    "Value": "2"
+  },
+  {
+    "Key": "rent",
+    "Value": "$1200"
+  },
+  {
+    "Key": "noticetime",
+    "Value": "24"
+  },
+  {
+    "Key": "daypay",
+    "Value": "5th"
+  },
+  {
+    "Key": "fee",
+    "Value": "$100"
+  },
+  {
+    "Key": "deposit",
+    "Value": "$2400"
+  },
+  {
+    "Key": "rules",
+    "Value": "Small pets in the cages are welcome, smoking is not allowed"
+  },
+  {
+    "Key": "guests",
+    "Value": "4"
+  },
+  {
+    "Key": "guestsnights",
+    "Value": "7"
+  },
+  {
+    "Key": "unoccupied",
+    "Value": "28"
+  },
+  {
+    "Key": "trash",
+    "Value": "Trash Collection, Inc."
+  } 
+]
