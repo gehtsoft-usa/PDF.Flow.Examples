@@ -10,6 +10,6 @@ PDF.Flow itself is NOT an open source project, however:
 
 You should only purchase a commerical license only when the project goes alive. Please contact [Gehtsoft USA LLC](https://gehtsoftusa.com) to discuss the licensing. 
 
-Please check the [project's Wiki](https://github.com/gehtsoft-usa/PDF.Flow/wiki) for useful articles and links.
+Please check the [project's Wiki](https://github.com/gehtsoft-usa/PDF.Flow.Examples/wiki) for useful articles and links.
 
 All examples published in this repository are under Apache 2.0 license. 
