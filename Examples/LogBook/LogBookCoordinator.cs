@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using Gehtsoft.PDFFlow.LogBook.Model;
+using LogBook.Model;
 using Gehtsoft.PDFFlow.Builder;
-using Gehtsoft.PDFFlow.Core.Utility;
-using Gehtsoft.PDFFlow.Models.Content;
-using Gehtsoft.PDFFlow.Models.Document;
 using Gehtsoft.PDFFlow.Models.Enumerations;
 using Gehtsoft.PDFFlow.Models.Shared;
 
-namespace Gehtsoft.PDFFlow.LogBook
+namespace LogBook
 {
-    public class LogBookCoordinator : IStreamCoordinator
+    internal static class ReflectionHelper
+    {
+        internal static IEnumerable<PropertyInfo> GetProperties(this object obj)
+        {
+            var propList = obj.GetType().GetProperties();
+            return propList;
+        }
+    }
+    internal class LogBookCoordinator : IStreamCoordinator
     {
         #region Fields
         private readonly DocumentBuilder _builder;
@@ -21,9 +25,12 @@ namespace Gehtsoft.PDFFlow.LogBook
         private readonly IStream _stream;
         private bool _disposed;
         private readonly bool _continuous;
-        private Table _table;        
-        private readonly string DateFormat = "MM/dd/yyyy";
-        private readonly IEnumerable<Section> _sections;
+        private TableBuilder _table;
+        private readonly string DateFormat = @"MM\/dd\/yyyy";
+        private FontBuilder exoRegular;
+        private FontBuilder exoItalic;
+        private FontBuilder exoBold;
+        private readonly IEnumerable<SectionBuilder> _sections;
         #endregion Fields
 
         #region Constructors
@@ -35,6 +42,9 @@ namespace Gehtsoft.PDFFlow.LogBook
             DateFormat = _options.DateFormat ?? DateFormat;
             stream.Coordinator = this;
             _continuous = continuous;
+            exoRegular = FontBuilder.New().FromFile(stream.exoRegularFile, 10);
+            exoItalic = FontBuilder.New().FromFile(stream.exoItalicFile, 10);
+            exoBold = FontBuilder.New().FromFile(stream.exoBoldFile, 10);
             _sections = CreateSections();
             if (continuous)
             {
@@ -69,6 +79,14 @@ namespace Gehtsoft.PDFFlow.LogBook
             _disposed = true;
         }
 
+        private void BuildSections()
+        {
+            foreach (SectionBuilder section in _sections)
+            {
+                _builder.AddSection(section);
+            }
+        }
+
         public void Input<T>(T data) where T : IEntity
         {
             if (data is Operation entity)
@@ -83,7 +101,7 @@ namespace Gehtsoft.PDFFlow.LogBook
                     properties.Add(info.Name, info.GetValue(data));
                 }
 
-                Input((IDictionary<string, object>)properties);
+                Input(properties);
             }
 
         }
@@ -110,260 +128,243 @@ namespace Gehtsoft.PDFFlow.LogBook
 
         public void Input(Operation book)
         {
-            var row = _table.AddRow();
-
-            
-            row.CellsStyle.SetBackColor(Color.White);
-            row.SetBackColor(Color.White);
-
-            row.AddTag(book);
-            row.CellsStyle.SetMinHeight(0);
+            TableRowBuilder row = _table.AddRow();
 
             // Received                              
+            row
+                .AddCellToRow(book.Code)
+                .AddCellToRow(book.Manufacturer)
+                .AddCellToRow(book.Model)
+                .AddCellToRow(book.VIN)
+                .AddCellToRow(book.Received.HasValue ? book.Received.Value.ToString(DateFormat) : "")
+                .AddCell(book.Source);
+
+            // Sent
+            row
+                .AddCellToRow(book.Code)
+                .AddCellToRow(book.Sent.HasValue ? book.Sent.Value.ToString(DateFormat) : "")
+                .AddCellToRow(book.Buyer_Name)
+                .AddCell(book.FullAddress);
+
             if (book.Discarded)
             {
-                row.SetFont(Font.Exo(10));
-                row.SetItalic();
-                row.SetStrikethrough(_options.DiscardedLineDrawMode == LinethroughMode.FullRow, _options.DiscardedLineColor, _options.DiscardedLineStyle);
+                row
+                    .SetFont(exoItalic)
+                    .SetStrikethrough(_options.DiscardedStrikethroughStroke, _options.DiscardedStrikethroughColor, _options.DiscardedStrikethroughMode == StrikethroughMode.FullRow);
             }
-            row.AddCell(book.Code).AddTag("id");
-            row.AddCellToRow(book.Manufacturer).AddCellToRow(book.Model).AddCellToRow(book.VIN)
-                .AddCell(book.Received.HasValue ? book.Received.Value.ToString(DateFormat) : "");
-            row.AddCell(book.Source);
-            
-            // Sent
-            row.AddCell(book.Code).AddTag("id");
-            row.AddCell(book.Sent.HasValue ? book.Sent.Value.ToString(DateFormat) : "");                
-            row.AddCell(book.Buyer_Name);              
-            row.AddCell(book.FullAddress);
-           
-            
-            if (book.Discarded && book.DiscardReason != null && book.DiscardReason.Length > 0)
+
+            if (book.Discarded && !string.IsNullOrEmpty(book.DiscardReason))
             {
-                row = _table.AddRow();                
-                row.AddTag(book).SetFont(new Font { Name = FontNames.Exo, Size = 8, Italic = true, Color = Color.Gray })
-                       .SetHorizontalAlignment(HorizontalAlignment.Left).SetBackColor(Color.FromRgba(1.0, 1.0, 0.9))
-                       .AddCellToRow("")
-                       .AddCellToRow(book.DiscardReason)
-                       .AddCellToRow("")
-                       .AddCellToRow("")
-                       .AddCellToRow("")
-                       .AddCellToRow("")
-                       .AddCellToRow("")
-                       .AddCellToRow("")
-                       .AddCellToRow("")
-                       .AddCellToRow("");
+                row = _table.AddRow();
+                row
+                   .SetFont(exoItalic).SetFontSize(8).SetFontColor(Color.Gray)
+                   .SetBackColor(Color.FromRgba(1.0, 1.0, 0.9))
+                   .AddCellToRow("")
+                   .AddCellToRow(book.DiscardReason, 2)
+                   .AddCellToRow("")
+                   .AddCellToRow("")
+                   .AddCellToRow("")
+                   .AddCellToRow("")
+                   .AddCellToRow("")
+                   .AddCellToRow("")
+                   .AddCellToRow("");
             }
         }
 
-        private IEnumerable<Section> CreateSections()
+        private IEnumerable<SectionBuilder> CreateSections()
         {
-            var sections = new List<Section>();
-            var s1 = new Section();
-            s1.SetMargins(50).SetSize(() => _options.PaperSize).SetOrientation(() => _options.Orientation).SetNumerationStyle(NumerationStyle.Arabic)
-                .AddParagraph("Operations Log").SetAlignment(HorizontalAlignment.Center).SetFontName(FontNames.Exo).SetFontSize(46).SetMargins(50, 0, 0, 0);
-            s1.AddParagraph("Book").SetAlignment(HorizontalAlignment.Center).SetFontName(FontNames.Exo).SetFontSize(56).SetMargins(10, 0, 0, 0);            
-            s1.AddParagraph("Powered by PDFFlow").SetFont(new Font{Name = FontNames.Exo,Size = 10,Color = Color.Black}).SetBold().SetAlignment(HorizontalAlignment.Right).Margins.Top = 100;            
-            sections.Add(s1);
+            // Section 1
 
-            var s2 = new Section();
-            s2.SetMargins(_options.Padding).SetSize(() => _options.PaperSize).SetOrientation(() => _options.Orientation).SetNumerationStyle(NumerationStyle.Arabic).Page.PageNumberStart = _options.StartingPage - 1;
+            var s1 = SectionBuilder.New()
+                .SetStyleFont(exoRegular)
+                .SetMargins(50)
+                .SetSize(_options.PaperSize)
+                .SetOrientation(_options.Orientation)
+                .AddParagraph("Operations Log")
+                    .SetAlignment(HorizontalAlignment.Center)
+                    .SetFontSize(46)
+                    .SetMarginTop(50)
+            .ToSection()
+                .AddParagraph("Book")
+                    .SetAlignment(HorizontalAlignment.Center)
+                    .SetFontSize(56)
+                    .SetMarginTop(10)
+            .ToSection()
+                .AddParagraph("Powered by PDFFlow")
+                    .SetFont(exoBold)
+                    .SetAlignment(HorizontalAlignment.Right)
+                    .SetMarginTop(100)
+            .ToSection();
 
-            AddLayouts(s2);
+            // Section 2
 
-            _table = s2.AddTable(table =>
-            {
-                table.SetRepeatHeaders(true).RowLayout = _options.RowLayout;
-                var titleFont = new Font
-                {
-                    Name = FontNames.Exo,
-                    Size = 10,
-                    Bold = true
-                };
-                table.ContentRowStyle.Font = titleFont.Clone().SetBold(false);
-                table.ContentRowStyle.SetBackColor(Color.White);
-                table.SetBackColor(Color.White);
-                
+            var s2 = SectionBuilder.New()
+                .SetStyleFont(exoRegular)
+                .SetMargins(_options.SectionMargins)
+                .SetSize(_options.PaperSize)
+                .SetOrientation(_options.Orientation)
+                .SetPageNumberStart(_options.StartingPage - 1);
 
-                var headerStyle = table.HeaderRowStyle.Clone().SetFont(titleFont).SetBackColor(Color.FromRgba(0.8, 0.8, 0.8))
-                .SetHorizontalAlignment(HorizontalAlignment.Left).SetBorderStyle(Stroke.None, Stroke.None);                     
-                table.HeaderRowStyle = headerStyle;
-                string id = "";
-                int rowIndex = 0;
-                void FormatRow(TableRow r, string tag)
-                {
-                    if (r.RowType != TableRowType.Title)
-                    {
-                        if (r.Tag is Operation book)
-                        {
-                            foreach (var cell in r.Cells.Where(x => x.Tag != null && x.Tag.ToString() == tag))
-                            {
-                                var index = r.Cells.IndexOf(cell);
-                                var col = table.Columns[index];
-                                cell.SetHorizontalAlignment(HorizontalAlignment.Center);                                
-                                if (book.Code == id && r.Index != rowIndex)
-                                {
-                                    cell.Content.Clear();
-                                    cell.Style.Border.Top.Style = Stroke.None;
-                                }
-                            }
+            AddRepeatingAreas(s2);
 
-                            rowIndex = r.Index;
-                            id = book.Code;
-                        }
-                    }
-                }
-                table.RowAdded = row => { FormatRow(row, "id"); };                
-                table.SetPartialBorders(false).SetRepeatHeaders(true).ContentRowStyle.SetBorderStyle(Stroke.None, Stroke.None).SetOverflowAction(_options.TextOverflowAction);
-                table.AddTitleRow(r =>
-                {
-                    var style = r.CellsStyle.Clone().SetHorizontalAlignment(HorizontalAlignment.Left).SetVerticalAlignment(VerticalAlignment.Bottom).SetBackColor(Color.White)
-                                                    .SetMinHeight(25)
-                                                    .SetFont(new Font { Name = FontNames.Exo, Size = 13 });
+            StyleBuilder style = StyleBuilder.New()
+                    .SetHorizontalAlignment(HorizontalAlignment.Left)
+                    .SetVerticalAlignment(VerticalAlignment.Bottom)
+                    .SetBackColor(Color.White)
+                    .SetFont(exoRegular)
+                    .SetFontSize(13);
 
-                    style.Border = new Border();
-                    style.SetBorderStyle(Stroke.None);
-                    style.Border.Top.Style = Stroke.Solid;
+            _table = s2.AddTable();
 
-                    r.AddCell("").SetStyle(style);
+            _table.SetMultipageSpread(6, 4);
 
-                    r.AddCell("Description of model").SetStyle(style);
+            _table
+                .SetRepeatHeaders(true)
+                .SetBorderStroke(Stroke.None, Stroke.Solid, Stroke.None, Stroke.Solid)
+                .SetContentRowStyleTextOverflowAction(_options.TextOverflowAction);
 
-                    r.AddCell("", 5).SetStyle(style);
+            _table
+                .AddColumnPercentToTable("#", 5)
+                .AddColumnPercentToTable("Manufacturer", 24)
+                .AddColumnPercentToTable("Model", 16)
+                .AddColumnPercentToTable("VIN", 24)
+                .AddColumnPercentToTable("Date Received", 16)
+                .AddColumnPercentToTable("Source", 15)
+                .AddColumnPercentToTable("#", 5)
+                .AddColumnPercentToTable("Date Sent", 16)
+                .AddColumnPercentToTable("Buyer Name", 30)
+                .AddColumnPercentToTable("Buyer Address", 49);
 
-                    r.AddCell("Reciept").SetStyle(style);
+            _table
+                .SetHeaderRowStyleFont(exoBold)
+                .SetHeaderRowStyleBackColor(Color.FromRgba(.8f, .8f, .8f))
+                .SetHeaderRowStyleHorizontalAlignment(HorizontalAlignment.Left)
+                .AddHeaderRow()
+                .ApplyStyle(style)                        
+                .SetMinHeight(25)
+                .AddCellToRow("")
+                .AddCellToRow("Description of model", 5)
+                .AddCellToRow("")
+                .AddCellToRow("Reciept", 3);
 
-                    r.AddCell("", 3).SetStyle(style);
-                });
+            // Section 3
 
-                var headerRowStyle = table.HeaderRowStyle.Clone();                
+            var s3 = SectionBuilder.New().SetStyleFont(exoRegular.SetSize(11));
 
-                table.AddColumnPercent("#", 5).SetStyle(headerRowStyle);
-
-                table.AddColumnPercent("Manufacturer", 24).SetStyle(headerRowStyle);               
-
-                table.AddColumnPercent("Model", 16).SetStyle(headerRowStyle);
-
-                table.AddColumnPercent("VIN", 24).SetStyle(headerRowStyle);
-                                
-                table.AddColumnPercent("Date Received", 16).SetStyle(headerRowStyle);
-
-                table.AddColumnPercent("Source", 15).SetStyle(headerRowStyle);
-
-                table.AddColumnPercent("#", 5).SetStyle(headerRowStyle);
-
-                table.AddColumnPercent("Date Sent", 16).SetStyle(headerRowStyle);
-
-                table.AddColumnPercent("Buyer Name", 30).SetStyle(headerRowStyle);
-
-                table.AddColumnPercent("Buyer Address", 49).SetStyle(headerRowStyle);
-
-            });
-            sections.Add(s2);
-
-            var s3 = new Section();
             string dateFormat = DateFormat;
 
-            var font = new Font
-            {
-                Name = FontNames.Exo,
-                Size = 11f
-            };
+            s3
+                .SetMargins(_options.SectionMargins)
+                .SetSize(_options.PaperSize)
+                .SetOrientation(_options.Orientation)
+                .AddParagraph("Book Name")
+                    .SetAlignment(HorizontalAlignment.Center)
+                    .SetMargins(0, 200, 0, 0)
+            .ToSection()    
+                .AddParagraph(_options.BookName)
+                    .SetAlignment(HorizontalAlignment.Center)
+                    .SetFont(exoBold)
+            .ToSection()
+                .AddParagraph("Date of Print")
+                    .SetAlignment(HorizontalAlignment.Center)
+                    .SetMargins(0, 10, 0, 0)
+            .ToSection()
+                .AddParagraph(_options.DateOfPrint.Value.ToString(dateFormat))
+                    .SetAlignment(HorizontalAlignment.Center)
+                    .SetFont(exoBold)
+            .ToSection()
+                .AddParagraph("Date range")
+                    .SetAlignment(HorizontalAlignment.Center)
+                    .SetMargins(0, 10, 0, 0)
+            .ToSection()
+                .AddParagraph(string.Concat(_options.DateRangeStart.Value.ToString(dateFormat), " - ", _options.DateRangeEnd.Value.ToString(dateFormat)))
+                .SetAlignment(HorizontalAlignment.Center)
+                .SetFont(exoBold)
+            .ToSection()
+                .AddParagraph("Number of Records")
+                .SetAlignment(HorizontalAlignment.Center)
+                .SetMargins(0, 10, 0, 0)
+            .ToSection()
+                .AddParagraph(_options.NumberOfRecords.ToString())
+                .SetAlignment(HorizontalAlignment.Center)
+                .SetFont(exoBold);
 
-            s3.SetMargins(60).SetSize(() => _options.PaperSize).SetOrientation(() => _options.Orientation).SetNumerationStyle(NumerationStyle.Arabic)
-              .AddParagraph("Book Name").SetAlignment(HorizontalAlignment.Center).SetMargins(250, 0, 0, 0).SetFont(font);
-
-            s3.AddParagraph(_options.BookName).SetAlignment(HorizontalAlignment.Center).SetFont(font).SetBold();
-          
-            s3.AddParagraph("Date of Print").SetAlignment(HorizontalAlignment.Center).SetMargins(10, 0, 0, 0).SetFont(font);            
-
-            s3.AddParagraph(_options.DateOfPrint.Value.ToString(dateFormat)).SetAlignment(HorizontalAlignment.Center).SetFont(font).SetBold();
-
-            s3.AddParagraph("Date range").SetAlignment(HorizontalAlignment.Center).SetMargins(10, 0, 0, 0).SetFont(font);
-
-            s3.AddParagraph(string.Concat(_options.DateRangeStart.Value.ToString(dateFormat), " - ", _options.DateRangeEnd.Value.ToString(dateFormat))).SetAlignment(HorizontalAlignment.Center).SetFont(font).SetBold();
-
-            s3.AddParagraph("Number of Records").SetAlignment(HorizontalAlignment.Center).SetMargins(10, 0, 0, 0).SetFont(font);
-
-            s3.AddParagraph(_options.NumberOfRecords.ToString()).SetAlignment(HorizontalAlignment.Center).SetFont(font).SetBold();
-
-            sections.Add(s3);
-            return sections;
+            return new List<SectionBuilder> {s1, s2, s3};
         }
 
-        private void BuildSections()
+        private void AddRepeatingAreas(SectionBuilder section)
         {
-            foreach (Section section in _sections)
-            {
-                _builder.AddSection(section);
-            }
-        }
-
-        private void AddLayouts(Section section)
-        {
-            AddHeader(true);  
-            AddHeader(false); 
-            AddFooter(true);  
-            AddFooter(false);            
+            AddHeader(true);
+            AddHeader(false);
+            AddFooter(true);
+            AddFooter(false);
 
             void AddHeader(bool isOddPage)
             {
                 string SentOrReceived = isOddPage ? "SENT" : "RECEIVED";
-                string DescriptionOrReceipt = isOddPage ? "Receipt" : "Description of Model";
                 string HeaderText = isOddPage ? _options.HeaderOdd : _options.HeaderEven;
-                LayoutPage LayoutPage = isOddPage ? section.Layout.AddOddPage() : section.Layout.AddEvenPage();
-                LayoutPage.AddRepeatingArea(section.Page, 50, areaConfig: area =>
-                {
-                    area.AddTable(table =>
-                    {
-                        table.SetBorderStyle(Stroke.None);
-                        table.Border.SetWidth(0.0f);
-                        
-                        table.Width = 0;
-                        table.AddRow(row =>
-                        {
-                            row.CellsStyle.Border = new Border();
-                            row.CellsStyle.Border.SetWidth(0.0f);
-                            row.SetBorderStyle(Stroke.None);
-                            row.AddCell(SentOrReceived)                            
-                            .SetHorizontalAlignment(HorizontalAlignment.Left).SetFont(Font.Exo(24));                        
-                            row.AddCell(HeaderText).SetPadding(0, 0, 10, 0).SetHorizontalAlignment(HorizontalAlignment.Right)                            
-                            .SetFont(Font.Exo(10));
-                        });
-                    });
-                });
+                RepeatingAreaBuilder header; 
+                if (isOddPage)
+                    header = section.AddHeaderToOddPage(50);
+                else
+                    header = section.AddHeaderToEvenPage(50);
+                header
+                    .AddTable()
+                        .SetBorderStroke(Stroke.None)
+                        .AddColumnToTable()
+                        .AddColumnToTable()
+                        .AddRow()
+                        .AddCell(SentOrReceived)
+                                .SetFontSize(24)
+                                .SetVerticalAlignment(VerticalAlignment.Bottom)
+                        .ToRow()
+                            .AddCell(HeaderText)
+                                .SetPadding(0, 0, 10, 0)
+                                .SetHorizontalAlignment(HorizontalAlignment.Right)
+                                .SetVerticalAlignment(VerticalAlignment.Bottom);
             }
 
             void AddFooter(bool isOddPage)
             {
-                LayoutPage LayoutPage = isOddPage ? section.Layout.AddOddPage() : section.Layout.AddEvenPage();
-                LayoutPage.AddRepeatingArea(section.Page, 30, true, areaConfig: area =>
+                string dateRangeStr1 = "";
+                string dateRangeStr2 = "";
+                if (_options.DisplayDateRange && _options.DateRangeStart.HasValue && _options.DateRangeEnd.HasValue)
                 {
-                    area.AddItem<Table>(table =>
-                    {
-                        table.SetBorderStyle(Stroke.None);
-                        table.Border.SetWidth(0.0f);
-                        table.ContentRowStyle.SetBorderStyle(Stroke.None).Border.SetWidth(0.0f);
-                        table.AddRow(row =>
-                        {
-                            row.CellsStyle.Border = new Border();
-                            row.CellsStyle.Border.SetWidth(0.0f);
-                            row.SetBorderStyle(Stroke.None);                                                       
-                            row.AddCell().SetFont(default)
-                                .AddParagraph().SetFont(new Font { Name = FontNames.Exo, Size = 10 })
-                                .AddTextToParagraph("Page ").AddPageNumber().AddTextToParagraph(" | ").AddText(_options.BookName).SetBold();
-
-                            var parDate = row.AddCell().SetFont(default).SetHorizontalAlignment(HorizontalAlignment.Right).AddParagraph().SetFont(new Font { Name = FontNames.Exo, Size = 10 });
-                            parDate.AddTextToParagraph("Date Of Print ").AddText(_options.DateOfPrint.Value.ToString("MM/dd/yyyy")).SetBold();
-                            if (_options.DisplayDateRange && _options.DateRangeStart.HasValue && _options.DateRangeEnd.HasValue)
-                            {
-                                parDate.AddTextToParagraph(" | Date Range ").AddText($"{_options.DateRangeStart.Value:MM/dd/yyyy} - {_options.DateRangeEnd.Value:MM/dd/yyyy}").SetBold();
-                            }                           
-                        });
-                    });
-
-                });
-            }            
+                    dateRangeStr1 = " | Date Range ";
+                    dateRangeStr2 = $"{_options.DateRangeStart.Value.ToString(DateFormat)} - {_options.DateRangeEnd.Value.ToString(DateFormat)}";
+                }
+                RepeatingAreaBuilder footer;
+                if (isOddPage)
+                    footer = section.AddFooterToOddPage(30);
+                else
+                    footer = section.AddFooterToEvenPage(30);
+                footer
+                    .AddTable()
+                        .SetBorderStroke(Stroke.None)
+                        .SetContentRowStroke(Stroke.None)
+                        .AddColumnToTable()
+                        .AddColumnToTable()
+                        .AddRow()
+                            .AddCell()
+                                   .AddParagraph()
+                                   .AddTextToParagraph("Page ")
+                                   .AddPageNumberToParagraph()
+                                   .AddTextToParagraph(" | ")
+                                   .AddText(_options.BookName)
+                                   .SetFont(exoBold)
+                            .ToRow()
+                                .AddCell()
+                                   .SetHorizontalAlignment(HorizontalAlignment.Right)
+                                   .AddParagraph()
+                                        .AddTextToParagraph("Date Of Print ")
+                                            .AddText(_options.DateOfPrint.Value.ToString(DateFormat))
+                                                .SetFont(exoBold)
+                                    .ToParagraph()
+                                        .AddText(dateRangeStr1)
+                                    .ToParagraph()
+                                        .AddText(dateRangeStr2)
+                                            .SetFont(exoBold);
+            }
         }
         #endregion Methods
     }

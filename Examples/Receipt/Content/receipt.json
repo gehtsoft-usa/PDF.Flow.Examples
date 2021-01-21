@@ -1,0 +1,30 @@
+[
+  {
+    "Field": "Date",
+    "Value": "2019-03-23 11:15AM PDT"
+  },
+  {
+    "Field": "Account billed",
+    "Value": "john-doe (John.Doe@gmail.com)"
+  },
+  {
+    "Field": "Tariff plan",
+    "Value": "40 Mbps"
+  },
+    {
+    "Field": "Total",
+    "Value": "$230.00 USD*"
+  },
+  {
+    "Field": "Charged to",
+    "Value": "American Express (7*** ****** *6666)"
+  },
+  {
+    "Field": "Transaction ID",
+    "Value": "QW3RT8UI"
+  },
+    {
+    "Field": "For service through",
+    "Value": "2019-09-22"
+  }
+]

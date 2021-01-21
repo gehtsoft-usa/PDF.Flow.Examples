@@ -1,0 +1,39 @@
+[
+  {
+    "Party": "Landlord",
+    "KnownAs": "Landlord",
+    "Name": "Best Landlord Company",
+    "NameExt": "ATTN. John Landlord",
+    "MailAddress": "2 Maple Ln, Suite A, Best Town, Alabama, 29227",
+    "Signer": "John Landlord as President of Best Landlord Company"
+  },  
+  {
+    "Party": "Tenant",
+    "Name": "Alex Tenant",
+    "KnownAs": "Alex Tenant",
+    "MailAddress": "1 Main Street, Apt 4, Small Town, Alabama, 20992"
+  },
+  {
+    "Party": "Tenant",
+    "Name": "Joanna Tenant",
+    "KnownAs": "Joanna Tenant"
+  },
+  {
+    "Party": "TenantAdd",
+    "Name": "Alex Jr Tenant",
+    "KnownAs": "Alex Jr Tenant"
+  },
+  {
+    "Party": "TenantAdd",
+    "Name": "Jill Tenant",
+    "KnownAs": "Jill Tenant"
+  },
+  {
+    "Party": "Manager",
+    "Name": "The management company",
+    "KnownAs": "Best Management Company",
+    "MailAddress": "5 Maple Ave, Suite 12A, Best City, Alabama, 29277",
+    "Phone": "(888) 222-3333",
+    "EmailAddress": "email@email.com"
+  }
+]

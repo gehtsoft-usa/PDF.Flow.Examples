@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using Gehtsoft.PDFFlow.LogBook.Model;
+using LogBook.Model;
 
-namespace Gehtsoft.PDFFlow.LogBook
+namespace LogBook
 {
     [DataContract]
     public class Operation:Entity

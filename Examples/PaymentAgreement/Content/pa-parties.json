@@ -1,0 +1,16 @@
+[
+  {
+    "Party": "Debtor",
+    "Name": "John A. Patient",
+    "MailAddress": "1 Main Street, Cortland, New York, 10388"
+  },  
+  {
+    "Party": "Co-Signer",
+    "Name": "Jill B. Patient"
+  },
+  {
+    "Party": "Creditor",
+    "Name": "Best Hospital Group",
+    "MailAddress": "1 Health Ln, Nyack, New York, 10977"
+  }
+]

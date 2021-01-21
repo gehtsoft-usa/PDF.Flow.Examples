@@ -1,0 +1,15 @@
+{
+  "Date": "2020-12-16T00:00:00",
+  "Balance": 37530,
+  "DiscountedBalance": 32000,
+  "DownPayment": 1500,
+  "InterestRate": 3.25,
+  "RepaymentPeriodBegins": "2020-01-01T00:00:00",
+  "RepaymentPeriodEnds": "2025-12-01T00:00:00",
+  "RepaymentFrequency": "1st of each month",
+  "ExtensionPeriodOne": 5,
+  "ExtensionPeriod": 10,
+  "BrokenPayPeriod": "five (5) business days",
+  "GoverningLawState": "New York",
+  "GoverningLaw": "Governing Law"
+}

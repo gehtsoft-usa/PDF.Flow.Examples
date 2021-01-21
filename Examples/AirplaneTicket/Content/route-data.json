@@ -1,0 +1,32 @@
+[
+  {
+    "Flight": "S7 168",
+    "FlightCompany": "S7 Airlines",
+    "FlightPlaner": "Airbus A321",
+    "Departure": "2020-06-16T07:05:00",
+    "DepartureAirport": "Istanbul, SAW",
+    "Arrival": "2020-06-16T07:30:00",
+    "ArrivalAirport": "New York, JFK",
+    "Class": "Econom",
+    "ClassAdd": "Flexible",
+    "Baggage": "1 place 23 kg",
+    "BaggageAdd": "Cabin 10 kg",
+    "CheckIn": "2020-06-16T06:25:00",
+    "CheckInAirport": "Istanbul, SAW"
+  },
+  {
+    "Flight": "S7 169",
+    "FlightCompany": "S7 Airlines",
+    "FlightPlaner": "Airbus A321-100/200",
+    "Departure": "2020-07-04T10:20:00",
+    "DepartureAirport": "New York, JFK",
+    "Arrival": "2020-07-05T05:30:00",
+    "ArrivalAirport": "Istanbul, SAW",
+    "Class": "Econom",
+    "ClassAdd": "Flexible",
+    "Baggage": "1 place 23 kg",
+    "BaggageAdd": "Cabin 10 kg",
+    "CheckIn": "2020-07-04T09:40:00",
+    "CheckInAirport": "New York, JFK"
+  }
+]

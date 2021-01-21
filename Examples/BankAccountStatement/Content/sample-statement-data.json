@@ -1,0 +1,290 @@
+[
+  {
+    "Date": "2020-05-26T00:00:00",
+    "Check": null,
+    "Details": "Mobile Deposit : Ref Number :677577755404",
+    "Deposits": 300,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 850
+  },
+  {
+    "Date": "2020-05-27T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized amazon.com",
+    "Deposits": 0,
+    "Withdrawals": 178.15,
+    "EndingDailyBalance": 671.85
+  },
+  {
+    "Date": "2020-05-28T00:00:00",
+    "Check": null,
+    "Details": "Mobile Deposit : Ref Number :824527230250",
+    "Deposits": 450,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 1121.85
+  },
+  {
+    "Date": "2020-05-28T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized Shoprite #4512",
+    "Deposits": 0,
+    "Withdrawals": 87.15,
+    "EndingDailyBalance": 1034.7
+  },
+  {
+    "Date": "2020-05-28T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized amazon.com",
+    "Deposits": 0,
+    "Withdrawals": 17.92,
+    "EndingDailyBalance": 1016.78
+  },
+  {
+    "Date": "2020-05-28T00:00:00",
+    "Check": null,
+    "Details": "Mobile Deposit : Ref Number :107043500279",
+    "Deposits": 150,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 1166.78
+  },
+  {
+    "Date": "2020-06-01T00:00:00",
+    "Check": null,
+    "Details": "PayPal Transfer : Ref Number : Q4THK3mqAjKK4DJ",
+    "Deposits": 1000,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 2166.78
+  },
+  {
+    "Date": "2020-06-02T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized Shoprite #4512",
+    "Deposits": 0,
+    "Withdrawals": 43.2,
+    "EndingDailyBalance": 2123.58
+  },
+  {
+    "Date": "2020-06-03T00:00:00",
+    "Check": null,
+    "Details": "Mobile Deposit : Ref Number :310455748540",
+    "Deposits": 200,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 2323.58
+  },
+  {
+    "Date": "2020-06-03T00:00:00",
+    "Check": null,
+    "Details": "Mobile Deposit : Ref Number :511250576650",
+    "Deposits": 100,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 2423.58
+  },
+  {
+    "Date": "2020-06-03T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized Games Inc.",
+    "Deposits": 0,
+    "Withdrawals": 399,
+    "EndingDailyBalance": 2024.58
+  },
+  {
+    "Date": "2020-06-03T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized amazon.com",
+    "Deposits": 0,
+    "Withdrawals": 325,
+    "EndingDailyBalance": 1699.58
+  },
+  {
+    "Date": "2020-06-04T00:00:00",
+    "Check": "1247",
+    "Details": "Check",
+    "Deposits": 0,
+    "Withdrawals": 230,
+    "EndingDailyBalance": 1469.58
+  },
+  {
+    "Date": "2020-06-05T00:00:00",
+    "Check": "1248",
+    "Details": "Check",
+    "Deposits": 0,
+    "Withdrawals": 193.12,
+    "EndingDailyBalance": 1276.46
+  },
+  {
+    "Date": "2020-06-09T00:00:00",
+    "Check": "1249",
+    "Details": "Check",
+    "Deposits": 0,
+    "Withdrawals": 1204.1,
+    "EndingDailyBalance": 72.36
+  },
+  {
+    "Date": "2020-06-10T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized Sunoco Gas",
+    "Deposits": 0,
+    "Withdrawals": 45.1,
+    "EndingDailyBalance": 27.26
+  },
+  {
+    "Date": "2020-06-11T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized Shoprite #4512",
+    "Deposits": 0,
+    "Withdrawals": 23,
+    "EndingDailyBalance": 4.26
+  },
+  {
+    "Date": "2020-06-12T00:00:00",
+    "Check": "1251",
+    "Details": "Check",
+    "Deposits": 0,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 4.26
+  },
+  {
+    "Date": "2020-06-12T00:00:00",
+    "Check": null,
+    "Details": "Mobile Deposit : Ref Number :511250576650",
+    "Deposits": 350,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 354.26
+  },
+  {
+    "Date": "2020-06-12T00:00:00",
+    "Check": null,
+    "Details": "Mobile Deposit : Ref Number :656808908596",
+    "Deposits": 700,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 1054.26
+  },
+  {
+    "Date": "2020-06-12T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized Walmart",
+    "Deposits": 0,
+    "Withdrawals": 124.1,
+    "EndingDailyBalance": 930.16
+  },
+  {
+    "Date": "2020-06-12T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized CVS #12349",
+    "Deposits": 0,
+    "Withdrawals": 1.13,
+    "EndingDailyBalance": 929.03
+  },
+  {
+    "Date": "2020-06-12T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized Shoprite #4512",
+    "Deposits": 0,
+    "Withdrawals": 94.3,
+    "EndingDailyBalance": 834.73
+  },
+  {
+    "Date": "2020-06-18T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized Shoprite #4512",
+    "Deposits": 0,
+    "Withdrawals": 45.8,
+    "EndingDailyBalance": 788.93
+  },
+  {
+    "Date": "2020-06-19T00:00:00",
+    "Check": "1250",
+    "Details": "Check",
+    "Deposits": 0,
+    "Withdrawals": 25.1,
+    "EndingDailyBalance": 763.83
+  },
+  {
+    "Date": "2020-06-20T00:00:00",
+    "Check": "1254",
+    "Details": "Check",
+    "Deposits": 0,
+    "Withdrawals": 340,
+    "EndingDailyBalance": 423.83
+  },
+  {
+    "Date": "2020-06-21T00:00:00",
+    "Check": null,
+    "Details": "PayPal Transfer : Ref Number : s9Wb9ejIBemLrqY",
+    "Deposits": 1500,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 1923.83
+  },
+  {
+    "Date": "2020-06-22T00:00:00",
+    "Check": null,
+    "Details": "PayPal Transfer : Ref Number : ztnneHwt28flJvp",
+    "Deposits": 700,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 2623.83
+  },
+  {
+    "Date": "2020-06-23T00:00:00",
+    "Check": null,
+    "Details": "PayPal Transfer : Ref Number : oQ3f6fi1fp1O7tS",
+    "Deposits": 250,
+    "Withdrawals": 0,
+    "EndingDailyBalance": 2873.83
+  },
+  {
+    "Date": "2020-06-23T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized amazon.com",
+    "Deposits": 0,
+    "Withdrawals": 62.1,
+    "EndingDailyBalance": 2811.73
+  },
+  {
+    "Date": "2020-06-23T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized Walmart",
+    "Deposits": 0,
+    "Withdrawals": 23.2,
+    "EndingDailyBalance": 2788.53
+  },
+  {
+    "Date": "2020-06-24T00:00:00",
+    "Check": null,
+    "Details": "Purchase authorized Shoprite #4512",
+    "Deposits": 0,
+    "Withdrawals": 94.2,
+    "EndingDailyBalance": 2694.33
+  },
+  {
+    "Date": "2020-06-24T00:00:00",
+    "Check": "1255",
+    "Details": "Check",
+    "Deposits": 0,
+    "Withdrawals": 125.1,
+    "EndingDailyBalance": 2569.23
+  },
+  {
+    "Date": "2020-06-24T00:00:00",
+    "Check": "1256",
+    "Details": "Check",
+    "Deposits": 0,
+    "Withdrawals": 93.21,
+    "EndingDailyBalance": 2476.02
+  },
+  {
+    "Date": "2020-06-24T00:00:00",
+    "Check": "1257",
+    "Details": "Check",
+    "Deposits": 0,
+    "Withdrawals": 15.13,
+    "EndingDailyBalance": 2460.89
+  },
+  {
+    "Date": "2020-06-24T00:00:00",
+    "Check": "1258",
+    "Details": "Check",
+    "Deposits": 0,
+    "Withdrawals": 42.93,
+    "EndingDailyBalance": 2417.96
+  }
+]

@@ -1,0 +1,33 @@
+This contract is an agreement between {renter}, who will be renting a house from {owner}, who owns the house being rented. 
+{paragraphbreak}
+The owner agrees to rent the house in its present condition located at {address} to the renter under this terms.
+{paragraphbreak}
+The renter acknowledges the terms of this Agreement and comply.
+{paragraphbreak}
+Number of renter's family members: {people} people.
+{paragraphbreak}
+This arrangement will begin on {datefrom} and will end on {dateto}.
+{paragraphbreak}
+The house has {bedrooms} bedrooms, a flat-screen TV, an equipped kitchen with a dishwasher and a microwave, a washing machine, and {bathrooms} bathrooms with a bath.
+{paragraphbreak}
+The rent for this house will be {rent}. This amount must be paid on {daypay} every month. Late payments will incur a fee of {fee}. 
+{paragraphbreak}
+A deposit in the amount of {deposit} will be held for the duration of the lease and will be returned to the renter within one month after the keys are surrendered. The Security Deposit will cover for any damage to the premise. This Security Deposit will also cover in case the Tenant fails to pay the utility bills.
+{paragraphbreak}
+Renters are required to show a photo identification and credit card upon move-in.
+{paragraphbreak}
+The major rules regarding this house are as follows:
+{paragraphbreak}
+{rules}. The number of guests shall not exceed {guests}. An overnight guest may not stay for more than two {guestsnights} nights. Tenants are not allowed to keep firearms, bows, combat knife and other weapons in the premises. Tenants agree not to use the premises in a way to disturb the peace in the neighborhood. 
+If the house is unoccupied for a period of {unoccupied} consecutive days without written notification to the Landlord, it will be considered as abandonment. The owner is allowed to presume that renter abandoned the premise if the furniture and other items were removed.
+By signing this agreement, the renter acknowledges that a complete list of these rules has been provided to him or her, and that the renter has read and understood these rules.
+{paragraphbreak}
+The owner has a right to enter the house for the purposes of inspection, repair, maintenance with an advanced notice of {noticetime} hours for any reason. In an emergency, owner may violate this right and enter immediately. Emergencies include those instances in which the property is in immediate danger, such as from a fire or flood.
+{paragraphbreak}
+The renter will make his or her best effort to keep the house in good condition. No major alterations will be made to the house without prior discussion with the owner. This includes painting, changes to the lawns, and installation of any permanent changes. All maintenance for the house will be taken care of by the owner, and the tenant must notify the owner immediately of maintenance required. Written permission from the landlord is needed for any alterations.
+{paragraphbreak}
+Rental furniture may be taken outside. If there is inclement weather in the forecast (rain, snow, etc.) then the furniture may not be taken outdoors. Do not move any pieces larger than a single chair without two people present to move it without dragging the legs.
+{paragraphbreak}
+Utilities will be the responsibility of the tenant. The renter will set up and shut down all utilities. This includes water, electric, and gas. Trash services is provided by {trash} and will be paid by the tenant.
+{paragraphbreak}
+Signing this agreement implies full understanding of the above conditions and the rental agreement. This agreement cannot be altered without full informed consent in writing provided by both parties. In certain cases of violation, the tenant may be required to vacate without appeal.

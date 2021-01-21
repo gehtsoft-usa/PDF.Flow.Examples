@@ -1,0 +1,94 @@
+[
+  {
+    "Name": "Living Room",
+    "Items": [
+        "Floors Condition",
+        "Walls Condition",
+        "Ceiling Condition",
+        "Windows Condition",
+        "Lighting Condition",
+        "Electrical Outlets",
+        "Other Condition",
+        "Other Condition"
+    ]
+  },
+  {
+    "Name": "Dining Room",
+    "Items": [
+        "Floors Condition",
+        "Walls Condition",
+        "Ceiling Condition",
+        "Windows Condition",
+        "Lighting Condition",
+        "Electrical Outlets",
+        "Other Condition",
+        "Other Condition"
+    ]
+  },
+  {
+    "Name": "Kitchen Area",
+    "Items": [
+        "Stove",
+        "Refrigerator Condition",
+        "Sink",
+        "Floors Condition",
+        "Walls Condition",
+        "Ceiling Condition",
+        "Windows Condition",
+        "Lighting Condition",
+        "Electrical Outlets",
+        "Cabinets Condition",
+        "Closets Condition",
+        "Exhaust Fan",
+        "Fire Alarms",
+        "Other Condition",
+        "Other Condition"
+    ]
+  },
+  {
+    "Name": "Bedroom(s)",
+    "Items": [
+        "Doors",
+        "Closets Condition",
+        "Floors Condition",
+        "Walls Condition",
+        "Ceiling Condition",
+        "Windows Condition",
+        "Lighting Condition",
+        "Electrical Outlets",
+        "Other Condition",
+        "Other Condition"
+    ]
+  },
+  {
+    "Name": "Bathroom(s)",
+    "Items": [
+        "Sink",
+        "Shower",
+        "Curtain",
+        "Towel Rack",
+        "Toilet Condition",
+        "Doors",
+        "Floors Condition",
+        "Walls Condition",
+        "Ceiling Condition",
+        "Windows Condition",
+        "Lighting Condition",
+        "Electrical Outlets",
+        "Other Condition",
+        "Other Condition"
+    ]
+  },
+  {
+    "Name": "Other",
+    "Items": [
+        "Heating Condition",
+        "AC Unit",
+        "Hot Water",
+        "Smoke Alarm",
+        "Door Bell",
+        "Other Condition",
+        "Other Condition"
+    ]
+  }
+]

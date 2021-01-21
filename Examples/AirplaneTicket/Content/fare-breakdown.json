@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "Base fare",
+    "Fare": 1840
+  },
+  {
+    "Name": "Airline fuel charge",
+    "Fare": 200
+  },
+  {
+    "Name": "Passenger service fee",
+    "Fare": 239
+  },
+  {
+    "Name": "User development fee",
+    "Fare": 389
+  },
+  {
+    "Name": "Govt. Service Tax",
+    "Fare": 117
+  },
+  {
+    "Name": "Congestion fee",
+    "Fare": 50
+  },
+  {
+    "Name": "Other Charges and Taxes",
+    "Fare": 50
+  }
+]

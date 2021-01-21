@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Gehtsoft.PDFFlow.LogBook.Model;
+using LogBook.Model;
 using Gehtsoft.PDFFlow.Builder;
-using Gehtsoft.PDFFlow.Core.Events;
-using Gehtsoft.PDFFlow.Events.Data;
-using Gehtsoft.PDFFlow.Infrastructure.Services;
-using Microsoft.Extensions.DependencyInjection;
-using Gehtsoft.PDFFlow.Infrastructure;
+using Gehtsoft.PDFFlow.UserUtils;
 
-namespace Gehtsoft.PDFFlow.LogBook
+namespace LogBook
 {
-    public class DocumentStream : IStream, IEventHandler<NewPageCreated>, IEventHandler<DocumentClosed>
+    public class DocumentStream : IStream
     {
         #region Fields
 
         private bool _disposed;
         public PDFSettings Options { get; private set; }
         public DocumentBuilder Builder { get; private set; }
-        private IEventHandlerContainer _eventHandlerContainer;
-        private IDocumentService _documentService;
-        private INativeDocument _nativeDocument;
+
+        public string exoRegularFile { get; set; }
+        public string exoItalicFile { get;  set; }
+        public string exoBoldFile { get;  set; }
+
         private int _startingPage;
 
         #endregion Fields
@@ -60,11 +58,6 @@ namespace Gehtsoft.PDFFlow.LogBook
 
         private void Init()
         {
-            _eventHandlerContainer = Builder.Scope.ServiceProvider.GetService<IEventHandlerContainer>();
-            _documentService = Builder.Scope.ServiceProvider.GetService<IDocumentService>();
-            _eventHandlerContainer.RegisterHandler<NewPageCreated>(GetHashCode().ToString(), this);
-            _eventHandlerContainer.RegisterHandler<DocumentClosed>(GetHashCode().ToString(), this);
-            _nativeDocument = Builder.Scope.ServiceProvider.GetService<INativeDocument>();
             LoadFonts();
         }
 
@@ -94,16 +87,10 @@ namespace Gehtsoft.PDFFlow.LogBook
         private void LoadFonts()
         {
             var projectDir = Directory.GetCurrentDirectory();
-            var exofontsDir = Path.Combine(projectDir, "Content", "Fonts\\exo");
-            var exoRegular = Path.Combine(exofontsDir, "Exo-Regular.ttf");
-            var exoRegularItalic = Path.Combine(exofontsDir, "Exo-Italic.ttf");
-            var exoRegularBold = Path.Combine(exofontsDir, "Exo-Bold.ttf");
-            var exoRegularBoldItalic = Path.Combine(exofontsDir, "Exo-BoldItalic.ttf");
-
-            _nativeDocument.LoadFontFromTtfFile(exoRegular, true);
-            _nativeDocument.LoadFontFromTtfFile(exoRegularItalic, true);
-            _nativeDocument.LoadFontFromTtfFile(exoRegularBold, true);
-            _nativeDocument.LoadFontFromTtfFile(exoRegularBoldItalic, true);
+            var exofontsDir = Path.Combine(projectDir, "Content", "fonts", "Exo");
+            exoRegularFile = Path.Combine(exofontsDir, "Exo-Regular.ttf");
+            exoItalicFile = Path.Combine(exofontsDir, "Exo-Italic.ttf");
+            exoBoldFile = Path.Combine(exofontsDir, "Exo-Bold.ttf");
         }
 
         public void Write<T>(T data) where T : IEntity => Coordinator?.Input(data);
@@ -118,15 +105,6 @@ namespace Gehtsoft.PDFFlow.LogBook
                 Builder.Build(Stream);
             else
                 Builder.Build(FilePath);
-        }
-
-        public void Handle(NewPageCreated eventData) => Options?.PageChanged(eventData);
-
-        public void Handle(DocumentClosed eventData)
-        {
-            _eventHandlerContainer.UnregisterHandler<NewPageCreated>(GetHashCode().ToString());
-            _eventHandlerContainer.UnregisterHandler<DocumentClosed>(GetHashCode().ToString());
-
         }
 
         #endregion Methods

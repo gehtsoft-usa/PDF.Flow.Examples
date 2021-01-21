@@ -1,0 +1,14 @@
+{
+  "Flight": "S7 168",
+  "DepartureAirport": "Istanbul",
+  "DepartureAbvr": "SAW",
+  "BoardingGate": "G21",
+  "BoardingTill": "2020-06-16T06:35:00",
+  "DepartureTime": "2020-06-16T07:05:00",
+  "Arrival": "2020-06-16T07:30:00",
+  "ArrivalAirport": "New York",
+  "ArrivalAbvr": "JFK",
+  "Class": "Econom",
+  "ClassAdd": "(T)",
+  "Seat": "12D"
+}

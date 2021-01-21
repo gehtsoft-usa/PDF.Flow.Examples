@@ -1,0 +1,177 @@
+﻿[
+  {
+    "Id": "1",
+    "Keyword": "auto",
+    "Description": "The auto keyword declares automatic variables"
+  },
+  {
+    "Id": "2",
+    "Keyword": "break",
+    "Description": "The break statement makes program jump out of the innermost enclosing loop (while, do, for or switch statements) explicitly."
+  },
+  {
+    "Id": "3",
+    "Keyword": "case",
+    "Description": "The switch and case statement is used when a block of statements has to be executed among many blocks"
+  },
+  {
+    "Id": "4",
+    "Keyword": "char",
+    "Description": "The char keyword declares a character variable."
+  },
+  {
+    "Id": "5",
+    "Keyword": "const",
+    "Description": "An identifier can be declared constant by using const keyword"
+  },
+  {
+    "Id": "6",
+    "Keyword": "continue",
+    "Description": "The continue statement skips the certain statements inside the loop.",
+  },
+  {
+    "Id": "7",
+    "Keyword": "default",
+    "Description": "Used in switch"
+  },
+  {
+    "Id": "8",
+    "Keyword": "do",
+    "Description": "Used in do...while loop"
+  }, 
+
+  {
+    "Id": "9",
+    "Keyword": "double",
+    "Description": "Keywords double and float are used for declaring floating type variables."
+  },
+  
+  {
+    "Id": "10",
+    "Keyword": "else",
+    "Description": "Decision making."
+  },
+  
+  {
+    "Id": "11",
+    "Keyword": "enum",
+    "Description": "Enumeration types are declared in C programming using keyword enum."
+  },
+  
+  {
+    "Id": "12",
+    "Keyword": "extern",
+    "Description": "The extern keyword declares that a variable or a function has external linkage outside of the file it is declared."
+  },
+  
+  {
+    "Id": "13",
+    "Keyword": "float",
+    "Description": "Keywords double and float are used for declaring floating type variables."
+  },
+  
+  {
+    "Id": "14",
+    "Keyword": "for",
+    "Description": "Used in a loop."
+  },
+  
+  {
+    "Id": "15",
+    "Keyword": "goto",
+    "Description": "Go to label."
+  },
+  
+  {
+    "Id": "16",
+    "Keyword": "if",
+    "Description": "Decision making."
+  },
+  
+  {
+    "Id": "17",
+    "Keyword": "int",
+    "Description": "Integer type."
+  },
+  
+  {
+    "Id": "18",
+    "Keyword": "long",
+    "Description": "Long integer type."
+  },
+  
+  {
+    "Id": "19",
+    "Keyword": "register",
+    "Description": "Creates register variables which are much faster than normal variables."
+  },
+  
+  {
+    "Id": "20",
+    "Keyword": "return",
+    "Description": "Exit from function, return value."
+  },
+  
+  {
+    "Id": "21",
+    "Keyword": "short",
+    "Description": "Short integer."
+  },
+  
+  {
+    "Id": "22",
+    "Keyword": "signed",
+    "Description": "Integer modifier."
+  },
+  
+  {
+    "Id": "23",
+    "Keyword": "sizeof",
+    "Description": "Gets a size."
+  },
+  {
+    "Id": "24",
+    "Keyword": "static",
+    "Description": "Creates static variable. The value of the static variables persists until the end of the program."
+  },
+  {
+    "Id": "25",
+    "Keyword": "struct",
+    "Description": "Structure."
+  },
+  {
+    "Id": "26",
+    "Keyword": "switch",
+    "Description": "The switch and case statement is used when a block of statements has to be executed among many blocks"
+  },
+  {
+    "Id": "27",
+    "Keyword": "typedef",
+    "Description": "The typedef keyword is used to explicitly associate a type with an identifier."
+  },
+  {
+    "Id": "28",
+    "Keyword": "union",
+    "Description": "A Union is used for grouping different types of variable under a single name."
+  },
+  {
+    "Id": "29",
+    "Keyword": "unsigned",
+    "Description": "Unsigned integer."
+  },
+  {
+    "Id": "30",
+    "Keyword": "void",
+    "Description": "The void keyword indicates that a function doesn't return any value."
+  },
+  {
+    "Id": "31",
+    "Keyword": "volatile",
+    "Description": "A volatile object can be modified in an unspecified way by the hardware."
+  },
+  {
+    "Id": "32",
+    "Keyword": "while",
+    "Description": "Used in a loop."
+  }
+]

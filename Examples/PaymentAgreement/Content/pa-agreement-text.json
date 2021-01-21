@@ -1,0 +1,72 @@
+[
+  {
+    "Header": "I. THE PARTIES.",
+    "Text": [
+      "This Payment (Installment) Agreement (“Agreement”) dated {agreement.date}, is by and between:",
+      "Creditor: {parties.creditor.name} , with a mailing address of {parties.creditor.mailaddress} (“Creditor”), and",
+      "Debtor: {parties.debtor.name}, with a mailing address of {parties.debtor.mailAddress} (“Debtor”).",
+      "HEREINAFTER, the Debtor and Creditor (“Parties”) agree to the following:"
+    ]
+  },
+  {
+    "Header": "II. BALANCE.",
+    "Text": [
+      "At the time of this Agreement, the Debtor owes the Creditor the amount of {agreement.balance} (“Current Balance”) for an Outstanding Balance (debt).",
+      "a.) Discounted Balance. In consideration of the Debtor’s faith to repay the Current Balance in this Agreement, the Creditor agrees the Current Balance shall be reduced to the discounted balance of {agreement.discountedBalance}. If the Debtor shall default under any of the terms of this Agreement, the Debtor shall owe the Creditor the Current Balance in addition to other penalties, fees, and any accumulated interest."
+    ]
+  },
+  {
+    "Header": "III. REPAYMENT PLAN.",
+    "Text": [
+      "To satisfy the Amount Owed, the Debtor agrees to repay the Creditor under the following terms:",
+      "Down-Payment. The Debtor shall pay a downpayment in the amount of {agreement.downPayment}",
+      "Interest Rate. The Amount Owed shall bear interest at a rate of {agreement.interestRate} compounded annually. The rate must be equal to or less than the usury rate in the State of the Borrower.",
+      "Repayment Period. The Debtor shall re-pay the Creditor on the {agreement.repaymentFrequency} beginning {agreement.repaymentPeriodBegins} and ending on {agreement.repaymentPeriodEnds} in equal installments",
+      "Payment Instructions. The payment is required to be made via ACH or physical check"
+    ]
+  },
+  {
+    "Header": "IV. LATE PAYMENT.",
+    "Text": [
+      "Any partial or late payment under this Agreement shall be allowed in accordance with the following:",
+      "Allow the Debtor to make payment within {agreement.extensionPeriodOne} days provided the Debtor pays a late fee of: {agreement.extensionPeriod} (“Extension Period”). If payment is not made within the Extension Period, this Agreement shall be in default."
+    ]
+  },
+  {
+    "Header": "V. PREPAYMENT:",
+    "Text": [
+      "The Debtor may pre-pay the Amount Owed without penalty."
+    ]
+  },
+  {
+    "Header": "VI. CO-SIGNER.",
+    "Text": [
+      "This Agreement shall have one (1) Co-Signer known as {parties.co-signer.name} hereinafter known as the “Co-Signer” agrees to the liabilities and obligations on behalf of the Debtor under the terms of this Agreement. If the Debtor does not make a payment, the Co-Signer shall be personally responsible and therefore is guaranteeing the payment of the principal, late fees, and all accrued interest under the terms of this Agreement."
+    ]
+  },
+  {
+    "Header": "VII. DEFAULT.",
+    "Text": [
+      "If for any reason the Debtor should not oblige to any section or portion of this Agreement, the Debtor shall be considered in default. Under such an event, the remaining balance of the Amount Owed shall be due within {agreement.brokenPayPeriod} with the Debtor liable to pay all reasonable attorney's fees and costs of collection of the Creditor. In addition, the Creditor may reclaim any property or goods in connection with the Amount Owed, hold and dispose of the same, and collect expenses, together with any deficiency due from the Debtor, subject to the Debtor’s right to redeem said items pursuant to law." 
+    ]
+  },
+  {
+    "Header": "VIII. GOVERNING LAW.",
+    "Text": [
+      "This Agreement shall be governed by, and construed in accordance with, the laws of the State of {agreement.governingLawState} (“{agreement.governingLaw}”)." 
+    ]
+  },
+  {
+    "Header": "IX. SEVERABILITY:",
+    "Text": [
+      "The unenforceability or invalidity of any clause in this Agreement shall not have an impact on the enforceability or validity of any other clause. Any unenforceable or invalid clause shall be regarded as removed from this Agreement to the extent of its unenforceability and invalidity. Therefore, this Agreement shall be interpreted and enforced as if it did not contain the said clause to the extent of its unenforceability and invalidity." 
+    ]
+  },
+  {
+    "Header": "X. ENTIRE AGREEMENT.",
+    "Text": [
+      "This Agreement contains all the terms agreed to by the Debtor and Creditor relating to its subject matter, including any attachments or addendums. This Agreement replaces all previous discussions, understandings, and oral agreements.",
+      "IN WITNESS WHEREOF, the Parties have executed this Agreement as of the undersigned dates written below." 
+    ]
+  }  
+]

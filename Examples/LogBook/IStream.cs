@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Gehtsoft.PDFFlow.LogBook.Model;
+using LogBook.Model;
 using Gehtsoft.PDFFlow.Builder;
 
-namespace Gehtsoft.PDFFlow.LogBook
+namespace LogBook
 {
     internal interface IBuilderAccessor
     {
@@ -15,6 +15,9 @@ namespace Gehtsoft.PDFFlow.LogBook
     {
         PDFSettings Options { get; }
         DocumentBuilder Builder { get; }
+        string exoRegularFile { get; set; }
+        string exoItalicFile { get; set; }
+        string exoBoldFile { get; set; }
         string FilePath { get; set; }
         Stream Stream { get; }
         int StartingPage { get; set; }
