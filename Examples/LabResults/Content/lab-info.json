@@ -1,0 +1,9 @@
+﻿{
+  "Index": "01",
+  "Code": "BN",
+  "Name": "Sample Lab",
+  "Address": "1234 Main Street, New York, NY 12345-6789",
+  "Director": "Dir: Michael Tannenbaum, MD",
+  "BranchPhone": "800-111-1212",
+  "LabPhone": "123-456-6789"
+}

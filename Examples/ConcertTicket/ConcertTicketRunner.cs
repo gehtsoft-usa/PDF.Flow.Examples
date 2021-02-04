@@ -14,7 +14,7 @@ namespace ConcertTicket
             TicketData ticketData =
                JsonConvert.DeserializeObject<TicketData>(ticketJsonContent);
 
-            string jsonFile = CheckFile(Path.Combine("Content", "data.json"));
+            string jsonFile = CheckFile(Path.Combine("Content", "concert-data.json"));
             string jsonContent = File.ReadAllText(jsonFile);
 
             ConcertData concertData =

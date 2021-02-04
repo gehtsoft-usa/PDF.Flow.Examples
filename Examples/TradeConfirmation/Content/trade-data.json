@@ -1,0 +1,27 @@
+{
+    "customername": "Jane Doe",
+    "customeraddress": [
+        "123 Retail Customer Street",
+        "Portland, ME 12345"
+    ],
+    "account": "# 123456789",
+    "bought": "15,000",
+    "price": "100.000",
+    "principalamount": "$15,000.00",
+    "accruedinterest": "$70.42",
+    "transactionfee": "$4.95",
+    "total": "$15,075,37",
+    "bankqualified": "No",
+    "state": "ME",
+    "bankqualified2": "No",
+    "dateddate": "04/01/1996",
+    "yieldtomaturity": "3.25",
+    "yieldtocall": "3.25",
+    "taxexempt": "Yes",
+    "capacity": "Principal",
+    "bondform": "Book Entry",
+    "tradedate": "05/21/2021",
+    "tradetime": "2:55 PM",
+    "settlementdate": "05/23/2021",
+    "order": "000000001"
+}

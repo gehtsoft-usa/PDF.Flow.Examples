@@ -129,7 +129,7 @@ namespace Receipt
                 .AddParagraph()
                 .SetMargins(0, 0, 0, 0)
                 .SetFont(FooterFont)
-                .AddTextToParagraph("666 John Doe Street")
+                .AddTextToParagraph("200 John Doe Street")
                 .AddTabSymbol()
                 .AddUrlToParagraph("https://yourhomeprovider.com")
                 .AddTabulation(280);
@@ -137,7 +137,7 @@ namespace Receipt
                 .AddParagraph()
                 .SetMargins(0, 0, 0, 0)
                 .SetFont(FooterFont)
-                .AddText(new[] { "Santa Barbara, CA 99999", "United States" });
+                .AddText(new[] { "Santa Barbara, CA 000001", "United States" });
             footer
                 .AddParagraph()
                 .SetMargins(0, 0, 0, 0)

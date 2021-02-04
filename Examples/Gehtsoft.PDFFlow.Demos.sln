@@ -3,29 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AfterschoolAgreement", "AfterschoolAgreement\AfterschoolAgreement.csproj", "{E9F69E0C-640D-4F14-A019-1FC42FA62A58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AfterschoolAgreement", "AfterschoolAgreement\AfterschoolAgreement.csproj", "{E9F69E0C-640D-4F14-A019-1FC42FA62A58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirplaneTicket", "AirplaneTicket\AirplaneTicket.csproj", "{85E01319-573D-427A-8F6A-F76203257337}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirplaneTicket", "AirplaneTicket\AirplaneTicket.csproj", "{85E01319-573D-427A-8F6A-F76203257337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccountStatement", "BankAccountStatement\BankAccountStatement.csproj", "{EBD6F520-BF33-44A6-9575-550720775878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankAccountStatement", "BankAccountStatement\BankAccountStatement.csproj", "{EBD6F520-BF33-44A6-9575-550720775878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardingPass", "BoardingPass\BoardingPass.csproj", "{D94BBA4A-6FA4-4EF8-89CC-AA4371450ED6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardingPass", "BoardingPass\BoardingPass.csproj", "{D94BBA4A-6FA4-4EF8-89CC-AA4371450ED6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentalContract", "HouseRentalContract\HouseRentalContract.csproj", "{F20A86F8-6177-4ADE-8A88-4A1E53B1B351}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseRentalContract", "HouseRentalContract\HouseRentalContract.csproj", "{F20A86F8-6177-4ADE-8A88-4A1E53B1B351}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogBook", "LogBook\LogBook.csproj", "{424611EB-E822-42BC-B382-8039A155E525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogBook", "LogBook\LogBook.csproj", "{424611EB-E822-42BC-B382-8039A155E525}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalBill", "MedicalBill\MedicalBill.csproj", "{5EB0F119-07D8-4671-BD0E-7CF49417161C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedicalBill", "MedicalBill\MedicalBill.csproj", "{5EB0F119-07D8-4671-BD0E-7CF49417161C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentAgreement", "PaymentAgreement\PaymentAgreement.csproj", "{B3C97224-E164-46F2-9398-36633D01E63D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentAgreement", "PaymentAgreement\PaymentAgreement.csproj", "{B3C97224-E164-46F2-9398-36633D01E63D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Receipt", "Receipt\Receipt.csproj", "{6C85DD55-9AB2-4BC1-9714-EC614C1D181D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receipt", "Receipt\Receipt.csproj", "{6C85DD55-9AB2-4BC1-9714-EC614C1D181D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentalAgreement", "RentalAgreement\RentalAgreement.csproj", "{DF6DB5E6-B25C-4312-B816-A935689375CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentalAgreement", "RentalAgreement\RentalAgreement.csproj", "{DF6DB5E6-B25C-4312-B816-A935689375CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resume", "Resume\Resume.csproj", "{5688B635-7970-4B07-B39D-008E0B6C58A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resume", "Resume\Resume.csproj", "{5688B635-7970-4B07-B39D-008E0B6C58A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorialC", "TutorialC\TutorialC.csproj", "{C4CF50C4-95D2-4DF6-8049-B0FCBFBE02F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TutorialC", "TutorialC\TutorialC.csproj", "{C4CF50C4-95D2-4DF6-8049-B0FCBFBE02F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelInsurance", "TravelInsurance\TravelInsurance.csproj", "{0F2C504B-5D57-46CA-8BB1-79F1EF6A07EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcertTicket", "ConcertTicket\ConcertTicket.csproj", "{D036C836-795A-414B-BE94-F6EAB380A7F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabResults", "LabResults\LabResults.csproj", "{172B955C-8B9A-4829-AA6D-151486359218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeConfirmation", "TradeConfirmation\TradeConfirmation.csproj", "{62C38132-E948-46A6-9A9E-D677E2EA821F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +89,22 @@ Global
 		{C4CF50C4-95D2-4DF6-8049-B0FCBFBE02F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4CF50C4-95D2-4DF6-8049-B0FCBFBE02F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4CF50C4-95D2-4DF6-8049-B0FCBFBE02F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F2C504B-5D57-46CA-8BB1-79F1EF6A07EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F2C504B-5D57-46CA-8BB1-79F1EF6A07EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F2C504B-5D57-46CA-8BB1-79F1EF6A07EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F2C504B-5D57-46CA-8BB1-79F1EF6A07EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D036C836-795A-414B-BE94-F6EAB380A7F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D036C836-795A-414B-BE94-F6EAB380A7F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D036C836-795A-414B-BE94-F6EAB380A7F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D036C836-795A-414B-BE94-F6EAB380A7F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172B955C-8B9A-4829-AA6D-151486359218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172B955C-8B9A-4829-AA6D-151486359218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172B955C-8B9A-4829-AA6D-151486359218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172B955C-8B9A-4829-AA6D-151486359218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62C38132-E948-46A6-9A9E-D677E2EA821F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C38132-E948-46A6-9A9E-D677E2EA821F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C38132-E948-46A6-9A9E-D677E2EA821F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C38132-E948-46A6-9A9E-D677E2EA821F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

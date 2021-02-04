@@ -15,7 +15,8 @@ namespace ConcertTicket
                 return 1;
             }
 
-            try {
+            try
+            {
                 ConcertTicketRunner.Run().Build(parameters.file);
             }
             catch (Exception e)
@@ -23,7 +24,7 @@ namespace ConcertTicket
                 Console.Error.WriteLine(e.ToString());
                 return 1;
             }
-            Console.WriteLine("\"" + Path.GetFullPath(parameters.file) 
+            Console.WriteLine("\"" + Path.GetFullPath(parameters.file)
                 + "\" document has been successfully built");
             if (parameters.appToView != null)
             {
@@ -31,6 +32,7 @@ namespace ConcertTicket
             }
             return 0;
         }
+
 
         private static void Start(string file, string appToView)
         {

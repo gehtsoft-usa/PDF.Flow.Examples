@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TradeConfirmation": {
+      "commandName": "Project",
+      "commandLineArgs": "..\\..\\..\\TradeConfirmation.pdf chrome"
+    }
+  }
+}
