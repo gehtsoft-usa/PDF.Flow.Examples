@@ -3,7 +3,7 @@
 # Purpose
 HouseRentalContract project is an example of the home rent contract generation. The example demonstrates creation of a simple multi-page text document. The document includes a repeating footer with automatic page numeration. The footer is made of two distinctive sections with different content for the initials area on all pages of the contract, except the page with full signatures. Additionally, this example demonstrates how to use Word-like tabulation and how to work with JSON as a data source.
 
-**to be changed to proper URL** The example source is available in [repo](https://github.com/gehtsoft-usa/PDF.Flow.Examples/tree/master/Examples/HouseRentalContract).
+The example source is available in [repo](https://github.com/gehtsoft-usa/PDF.Flow.Examples/tree/master/Examples/HouseRentalContract).
 
 # Prerequisites
 1) **Visual Studio 2017** or above is installed.
