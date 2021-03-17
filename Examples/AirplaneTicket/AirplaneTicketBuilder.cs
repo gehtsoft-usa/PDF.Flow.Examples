@@ -273,7 +273,7 @@ namespace AirplaneTicket
 
         private void BuildHelp(TableCellBuilder cellBuilder)
         {
-            cellBuilder.AddParagraph("Heed help?")
+            cellBuilder.AddParagraph("Need help?")
                .SetFont(FNT11_B).SetMarginBottom(2);
             cellBuilder.AddTable(FillHelpTable);
         }

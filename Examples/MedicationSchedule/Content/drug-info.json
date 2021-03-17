@@ -1,0 +1,59 @@
+﻿[
+  {
+    "Name": "Zerit®",
+    "Type": "(Stavudine), 15mg Capsule(s)",
+    "Dosage": "4 tablets/day for 4 week(s)",
+    "Time": [ "8 AM", "12 PM", "5 PM", "9 PM" ],
+    "TakeDrug": [ false, true, false, true, false, true, false, true, false, true, false, true, false, true ]
+  },
+
+  {
+    "Name": "Valcyte®",
+    "Type": "(Valgancyclovir Hidrocloride), 450 mg Tablet(s)",
+    "Dosage": "2 tablets/day for 2 week(s)",
+    "Time": [ "Noon", "Bedtime" ],
+    "TakeDrug": [ true, false, true, false, true, false, true, false, true, false, true, false, true, false ]
+  },
+
+  {
+    "Name": "Prednisone",
+    "Type": "",
+    "Dosage": "4 tablets/day for 4 week(s)",
+    "Time": [ "10 AM" ],
+    "TakeDrug": [ true, false, false, true, false, false, true, false, false, true, false, false, true, false ]
+  },
+
+  {
+    "Name": "Aspirin",
+    "Type": "375 mg film coated Tablet(s)",
+    "Dosage": "4 tablets/day for 1 week",
+    "Time": [ "8 AM", "12 PM", "4 PM", "8 PM" ],
+    "TakeDrug": [ true, true, true, true, true, true, true, false, false, false, false, false, false, false ]
+  },
+
+  {
+    "Name": "Salbutamol",
+    "Type": "Aerosol, spray 90 mg",
+    "Dosage": "Inhalation 6 times/day for 2 week(s)",
+    "Time": [ "10 AM", "12 PM", "2 PM", "4 PM", "6 PM", "8 PM" ],
+    "TakeDrug": [ true, false, true, false, true, false, true, false, true, false, true, false, true, false ]
+  },
+
+  {
+    "Name": "Vitamin D3",
+    "Type": "(Cholecalciferol), 1.25 mg Capsule(s)",
+    "Dosage": "3 capsules/day for 2 week(s)",
+    "Time": [ "Morning", "Afternoon", "Evening" ],
+    "TakeDrug": [ true, true, true, true, true, true, true, true, true, true, true, true, true, true ]
+  },
+
+  {
+    "Name": "Ibuprofen",
+    "Type": "",
+    "Dosage": "1 tablet/day for 3 week(s)",
+    "Time": [ "6 PM" ],
+    "TakeDrug": [ true, true, false, true, true, false, true, true, false, true, true, false, true, true ]
+  }
+
+
+]

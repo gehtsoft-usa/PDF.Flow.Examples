@@ -9,33 +9,6 @@ namespace RentalAgreement
 {
     internal class RentalAgreementHelper
     {
-        internal static void BuildHeaderWithBar(RepeatingAreaBuilder builder, 
-            float pageWidth)
-        {
-            var tableBuilder = builder.AddTable();
-            tableBuilder
-                .SetBorder(Stroke.None)
-                .SetWidth(XUnit.FromPercent(100))
-                .AddColumnPercentToTable("", 50)
-                .AddColumnPercentToTable("", 50);
-            var rowBuilder = tableBuilder.AddRow();
-            rowBuilder.AddCell()
-                .AddImage(Path.Combine("images", "ra-logo-2x.png"),
-                    XSize.FromHeight(120));
-            rowBuilder.AddCell()
-                .SetHorizontalAlignment(HorizontalAlignment.Right)
-                .AddImage(Path.Combine("images", "ra-barcode.png"),
-                    XSize.FromHeight(120));
-            builder.AddParagraph()
-                .SetAlignment(HorizontalAlignment.Right)
-                .SetUrlStyle(
-                    StyleBuilder.New()
-                        .SetFont(URL_FONT))
-                .AddUrlToParagraph("http://www.bestlandlords.com/billing");
-            builder.AddLine(pageWidth, 1.5f, Stroke.Solid, Color.Gray)
-                .SetMarginTop(5);
-
-        }
 
         internal static void BuildHeader(RepeatingAreaBuilder builder, 
             float pageWidth)
@@ -48,16 +21,6 @@ namespace RentalAgreement
 
         }
 
-        internal static void BuildFooterEqualHousingOpportunity(
-            RepeatingAreaBuilder builder)
-        {
-            builder
-                .AddImage(Path.Combine("images",
-                            "equal-housing-opportunity-logo-1200w.png"),
-                    XSize.FromHeight(80))
-                .SetAlignment(HorizontalAlignment.Left);
-            BuildFooter(builder);
-        }
 
         internal static void BuildFooterBar(RepeatingAreaBuilder builder, float barImageHeight)
         {
@@ -93,8 +56,10 @@ namespace RentalAgreement
                 .AddUrlToParagraph("http://www.bestlandlords.com/billing");
             rowBuilder
                 .AddCell()
-                .AddImage(Path.Combine("images", "ra-barcode.png"),
-                    XSize.FromHeight(barImageHeight));
+                .AddQRCodeUrl("http://www.bestlandlords.com/billing", 2)
+                    .SetHeight(barImageHeight)
+                    .SetMarginTop(20)
+                    .SetBorder(Stroke.Solid, Color.Black, 2);
             rowBuilder.AddCell().AddParagraph()
                 .SetAlignment(HorizontalAlignment.Right)
                 .AddTextToParagraph(" ", PAGE_NUMBER_FONT, true)
@@ -134,18 +99,5 @@ namespace RentalAgreement
             return "$" + String.Format(
                 DocumentLocale, "{0:0,0.00}", fund);
         }
-
-        internal static string PercentsToString(double procents)
-        {
-            if (procents < 10)
-            {
-                return
-                    String.Format(DocumentLocale, "{0:,0.00}", procents) 
-                        + "%";
-            }
-            return String.Format(DocumentLocale, "{0:0,0.00}", procents) 
-                    + "%";
-        }
-
     }
 }

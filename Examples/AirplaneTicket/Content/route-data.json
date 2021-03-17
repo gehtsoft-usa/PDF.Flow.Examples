@@ -1,7 +1,7 @@
 [
   {
-    "Flight": "S7 168",
-    "FlightCompany": "S7 Airlines",
+    "Flight": "Sample 168",
+    "FlightCompany": "Sample Airlines",
     "FlightPlaner": "Airbus A321",
     "Departure": "2020-06-16T07:05:00",
     "DepartureAirport": "Istanbul, SAW",
@@ -15,8 +15,8 @@
     "CheckInAirport": "Istanbul, SAW"
   },
   {
-    "Flight": "S7 169",
-    "FlightCompany": "S7 Airlines",
+    "Flight": "Sample 169",
+    "FlightCompany": "Sample Airlines",
     "FlightPlaner": "Airbus A321-100/200",
     "Departure": "2020-07-04T10:20:00",
     "DepartureAirport": "New York, JFK",

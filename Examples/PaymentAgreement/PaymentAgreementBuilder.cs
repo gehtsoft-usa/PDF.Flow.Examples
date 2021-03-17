@@ -10,7 +10,6 @@ using Gehtsoft.PDFFlow.UserUtils;
 using Gehtsoft.PDFFlow.Utils;
 using System.Text.RegularExpressions;
 using System.Text;
-
 namespace PaymentAgreement
 {
     internal class PaymentAgreementBuilder
@@ -85,28 +84,11 @@ namespace PaymentAgreement
 
         }
 
-        private void BuildBarcodeFooter(RepeatingAreaBuilder builder)
-        {
-            builder
-                .AddImage(Path.Combine("images", "pa-barcode.png"),
-                    XSize.FromHeight(50))
-                .SetAlignment(HorizontalAlignment.Right);
-            ParagraphBuilder paragraphBuilder = builder
-                .AddParagraph().SetAlignment(HorizontalAlignment.Right);
-            FontBuilder font = Fonts.Helvetica(7f).SetBold().SetUnderline(Stroke.Solid, Color.Blue);
-            paragraphBuilder
-                .SetUrlStyle(
-                    StyleBuilder.New()
-                        .SetFont(font))
-                .AddUrlToParagraph("http://www.besthospital.com/payments");
-        }
-
         private void BuildFooter(RepeatingAreaBuilder builder)
         {
             builder
-                .AddImage(Path.Combine("images", "pa-barcode.png"),
-                    XSize.FromHeight(50))
-                .SetAlignment(HorizontalAlignment.Left);
+                .AddQRCodeUrl("http://www.besthospital.com/payments", 2,
+                              Color.Black, Color.White, false).SetHeight(50);
             ParagraphBuilder paragraphBuilder = builder
                 .AddParagraph();
             FontBuilder font = Fonts.Helvetica(7f).SetBold().SetUnderline(Stroke.Solid, Color.Blue);

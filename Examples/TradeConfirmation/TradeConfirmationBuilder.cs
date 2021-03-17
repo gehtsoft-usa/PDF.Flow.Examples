@@ -67,18 +67,18 @@ namespace TradeConfirmation
                 .SetHorizontalAlignment(HorizontalAlignment.Right);
 
             var row3Builder = headerTable.AddRow();
-            Account(row3Builder.AddCell("", 2, 0).SetFont(FNT9)
+            AddAccount(row3Builder.AddCell("", 2, 0).SetFont(FNT9)
                 .SetHorizontalAlignment(HorizontalAlignment.Right)
                 .SetPadding(0, 0, 0, 10)
                 .SetBorderStroke(Stroke.None));
 
             var row4Builder = headerTable.AddRow();
-            Customer(row4Builder.AddCell("").SetFont(FNT9));
-            Firm(row4Builder.AddCell("").SetFont(FNT9)
+            AddCustomer(row4Builder.AddCell("").SetFont(FNT9));
+            AddFirm(row4Builder.AddCell("").SetFont(FNT9)
                 .SetHorizontalAlignment(HorizontalAlignment.Right));
 
             var row5Builder = headerTable.AddRow();
-            Account(row5Builder.AddCell("", 2, 0).SetFont(FNT9).SetBold(true)
+            AddAccount(row5Builder.AddCell("", 2, 0).SetFont(FNT9).SetBold(true)
                 .SetHorizontalAlignment(HorizontalAlignment.Left)
                 .SetBorderStroke(Stroke.None));
 
@@ -106,14 +106,15 @@ namespace TradeConfirmation
 
             var row8Builder = bodyTable.AddRow();
             row8Builder.AddCell("Trade").SetFont(FNT9)
-                .SetHorizontalAlignment(HorizontalAlignment.Center);
+                .SetHorizontalAlignment(HorizontalAlignment.Center)
+                .SetPadding(0, 0, 5, 0);
             row8Builder.AddCell("", 3, 0)
                 .AddParagraph("Order number: ").SetFont(FNT9).AddText(TradeData.Order).SetFont(FNT9);
 
             var row9Builder = bodyTable.AddRow();
             row9Builder.AddCell();
             row9Builder.AddCell("Trade Calculation", 3, 0).SetFont(FNT11B)
-                .SetBorderWidth(2)
+                .SetBorderWidth(0, 0, 0, 2)
                 .SetBorderStroke(strokeLeft: Stroke.None, strokeTop: Stroke.None,
                     strokeRight: Stroke.None, strokeBottom: Stroke.Solid);
             
@@ -136,7 +137,7 @@ namespace TradeConfirmation
             var row12Builder = bodyTable.AddRow();
             row12Builder.AddCell();
             FillLeftBlock(a: "Transaction Fee:", b: TradeData.TransactionFee,
-                row12Builder.AddCell("").SetPadding(0, 4, 0, 4).SetBorderWidth(2));
+                row12Builder.AddCell("").SetPadding(0, 4, 0, 4).SetBorderWidth(0, 0, 0, 2));
             row12Builder.AddCell();
             FillRightBlock(a: "Settlement Date:", b: TradeData.SettlementDate,
                 row12Builder.AddCell("").SetPadding(0, 4, 0, 4));
@@ -151,20 +152,20 @@ namespace TradeConfirmation
             var row14Builder = bodyTable.AddRow();
             row14Builder.AddCell();
             FillLeftBlock(a: "Bank Qualified:", b: TradeData.BankQualified,
-                row14Builder.AddCell("").SetPadding(0, 4, 0, 4).SetBorderWidth(2));
+                row14Builder.AddCell("").SetPadding(0, 4, 0, 4).SetBorderWidth(0, 0, 0, 2));
             row14Builder.AddCell();
             row14Builder.AddCell();
-
-           var row15Builder = bodyTable.AddRow();
+            
+            var row15Builder = bodyTable.AddRow();
             row15Builder.AddCell();
             FillLeftBlock(a: "State:", b: TradeData.State,
                 row15Builder.AddCell("").SetPadding(0, 4, 0, 4));
             row15Builder.AddCell();
             row15Builder.AddCell();
-
-             var row16Builder = bodyTable.AddRow();
+            
+            var row16Builder = bodyTable.AddRow();
              row16Builder.AddCell();
-             FillLeftBlock(a: "Bank Qualified:", b: TradeData.BankQualified,
+             FillLeftBlock(a: "Bank Qualified:", b: TradeData.BankQualified2,
                  row16Builder.AddCell("").SetPadding(0, 4, 0, 4));
              row16Builder.AddCell();
              row16Builder.AddCell();
@@ -227,7 +228,7 @@ namespace TradeConfirmation
                 .SetPadding(0, 18, 0, 0));
         }
    
-        private void Customer(TableCellBuilder cellBuilder)
+        private void AddCustomer(TableCellBuilder cellBuilder)
         {
             cellBuilder.AddParagraph(TradeData.CustomerName);
             foreach (var item in TradeData.CustomerAddress)
@@ -236,7 +237,7 @@ namespace TradeConfirmation
             }
         }
 
-        private void Firm(TableCellBuilder cellBuilder)
+        private void AddFirm(TableCellBuilder cellBuilder)
         {
             foreach (var item in FirmData.FirmContact)
             {
@@ -244,7 +245,7 @@ namespace TradeConfirmation
             }
         }
 
-        void Account(TableCellBuilder cellBuilder)
+        void AddAccount(TableCellBuilder cellBuilder)
         {
             cellBuilder.AddParagraph("Trade Confirmation - Account ")
                 .AddTabSymbol().AddText(TradeData.Account);
@@ -262,7 +263,7 @@ namespace TradeConfirmation
         void FillLeftBlock(string a, string b, TableCellBuilder cellBuilder)
         {
             cellBuilder.AddParagraph(a).SetFont(FNT10).SetLineSpacing(1.2f).AddTabSymbol()
-                .AddTabulation(254, TabulationType.Right).AddText(b).SetFont(FNT10);
+                .AddTabulation(252, TabulationType.Right).AddText(b).SetFont(FNT10);
             cellBuilder
                 .SetBorderStroke(strokeLeft: Stroke.None, strokeTop: Stroke.None,
                 strokeRight: Stroke.None, strokeBottom: Stroke.Solid);
@@ -270,7 +271,7 @@ namespace TradeConfirmation
         void FillRightBlock(string a, string b, TableCellBuilder cellBuilder)
         {
             cellBuilder.AddParagraph(a).SetFont(FNT10).SetLineSpacing(1.2f).AddTabSymbol()
-                .AddTabulation(210, TabulationType.Right).AddText(b).SetFont(FNT10);
+                .AddTabulation(207, TabulationType.Right).AddText(b).SetFont(FNT10);
             cellBuilder
                 .SetBorderStroke(strokeLeft: Stroke.None, strokeTop: Stroke.None,
                 strokeRight: Stroke.None, strokeBottom: Stroke.Solid);
@@ -278,7 +279,7 @@ namespace TradeConfirmation
         void Exempt(TableCellBuilder cellBuilder)
         {
             cellBuilder.AddParagraph("Callable 04 / 01 / 27 @100").SetFont(FNT10).SetLineSpacing(1.2f).AddTabSymbol()
-                .AddTabulation(254, TabulationType.Right).AddText(TradeData.TaxExempt).SetFont(FNT10);
+                .AddTabulation(252, TabulationType.Right).AddText(TradeData.TaxExempt).SetFont(FNT10);
             cellBuilder.AddParagraph("Federally Tax Exempt").SetFont(FNT10);
             cellBuilder
                 .SetBorderStroke(strokeLeft: Stroke.None, strokeTop: Stroke.None, 

@@ -135,8 +135,5 @@ namespace RentalAgreement
                 .AddTabulation(250, TabulationType.Left,
                     TabulationLeading.BottomLine);
         }
-
-
-
     }
 }

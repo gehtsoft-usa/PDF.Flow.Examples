@@ -1,7 +1,7 @@
 ##### Example: ConcertTicket
 
 # Purpose
-The ConcertTicket project is an example of generation of a Concert Ticket document. The example demonstrates how to create a document based on several tables built with using `solSpan` and `rowSpan` parameters.
+The ConcertTicket project is an example of generation of a Concert Ticket document. The example demonstrates how to create a document based on several tables built with using `colSpan` and `rowSpan` parameters.
 The example also demonstrates how to locate images and data from a data source in the table cells.
 
 The example source is available in [repo](https://github.com/gehtsoft-usa/PDF.Flow.Examples/tree/master/Examples/ConcertTicket).
@@ -66,8 +66,8 @@ The data for the rules, event description, and location instructions fields are 
 }
 ```
 
-### Concert logo
-The concert logo is located in the **images/CT_Logo.png** file.
+### Concert poster
+The concert poster is located in the **images/CT_Poster.png** file.
 
 ### QR code
 The ticket QR code is located in the **images/Qr_code.png** file.
@@ -234,23 +234,23 @@ and fill it with the content.
 Here we add four columns to the table, 20%, 30%, 20%, and 30% in width respectively. 
 Then we add two rows that will make our header.
 
-4.6. In the first cell of the first row, we add the concert logo image with `rowSpan` = 2 because the cell spans two rows.
+4.6. In the first cell of the first row, we add the concert poster image with `rowSpan` = 2 because the cell spans two rows.
 
 ```c#
             var row1Builder = concertTable.AddRow();
             AddLogoImage(row1Builder.AddCell("", 0, 2));
 ```
 
-4.7. The logo image is loaded from the local file **images/CT_Logo_2x.png**:
+4.7. The poster image is loaded from the local file **images/CT_Poster.png**:
 
 ```c#
         private void AddLogoImage(TableCellBuilder cellBuilder)
         {
             cellBuilder
-                .SetPadding(2, 2, 2, 2);
+                .SetPadding(2, 2, 2, 0);
             cellBuilder
                 .AddImage(Path.Combine("images",
-                     "СT_Logo.png")).SetHeight(340); 
+                     "СT_Poster.png")).SetHeight(340); 
         }
 ```
 4.8. In the second cell of the first row, we place the concert name, date, and a line. We set `colSpan`= 3 here because the cell spans three columns.

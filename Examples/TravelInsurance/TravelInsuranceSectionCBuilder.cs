@@ -59,12 +59,12 @@ namespace TravelInsurance
             CreateRow(tableBuilder, new Dictionary<string, int>()
                 {
                     {"", 2 }
-                }, 10);
+                }, 25);
 
             CreateRow(tableBuilder, new Dictionary<string, int>()
                 {
                     {"", 2 }
-                }, 10);
+                }, 25);
         }
     }
 }

@@ -9,14 +9,14 @@ namespace Resume
     {
         static int Main(string[] args)
         {
-            Parameters parameters = new Parameters(null, "Receipt.pdf");
+            Parameters parameters = new Parameters(null, "Resume.pdf");
             if (!PrepareParameters(parameters, args))
             {
                 return 1;
             }
             try
             {
-                //ResumeRunner.Run().Build(parameters.file);
+                ResumeRunner.Run().Build(parameters.file);
             }
             catch (Exception e)
             {
@@ -73,7 +73,7 @@ namespace Resume
         private static void Usage()
         {
             Console.WriteLine("Usage: dotnet run [fullPathToOutFile] [appToView]");
-            Console.WriteLine("Where: fullPathToOutFile - a path to the result file, 'Receipt.pdf' by default");
+            Console.WriteLine("Where: fullPathToOutFile - a path to the result file, 'Resume.pdf' by default");
             Console.WriteLine("appToView - the name of an application to view the file immediately after preparing, by default none app starts");
         }
 

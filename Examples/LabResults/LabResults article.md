@@ -291,7 +291,7 @@ namespace LabResults
 
                 new LabResultsHeaderBuilder().Build(sectionBuilder);
                 new LabResultsTestDetailsBuilder().Build(sectionBuilder, testData);
-                new LabResultsFooterBuilder().Build();
+                new LabResultsFooterBuilder().Build(sectionBuilder, testDetailsData.Count);
             }
 
             return documentBuilder;
@@ -384,7 +384,7 @@ namespace LabResults
         ReportInfoData reportInfoData = JsonConvert.DeserializeObject<ReportInfoData>
             (File.ReadAllText(Path.Combine("Content", "report-info.json")));
 
-        internal void Build()
+        internal void Build(SectionBuilder sectionBuilder, int pageCount)
         {
         }
     }
@@ -695,9 +695,9 @@ namespace LabResults
         {
             var resultColor = Color.FromHtml("#417505");
 
-            if (testData.ClinicalInfo == "INDETERMINATE")
+            if (testData.ClinicalInfo == "INDETERMINATE" || testData.ClinicalInfo == "INSUFFICIENT")
                 resultColor = Color.FromHtml("#F5A623");
-            else if (testData.ClinicalInfo == "DETECTED")
+            else if (testData.ClinicalInfo == "DETECTED" || testData.ClinicalInfo == "HIGH")
                 resultColor = Color.Red;
 
         }
@@ -732,7 +732,7 @@ We added logic to highlight value of Clinical info in different colors.
                         .SetFont(FNT9);
 ```
 
-Run the project, now the result of the test is in different color on each page:
+Run the project, now the result of the tests is in different color on each page:
 
 ![pic-8](../Articles%20Images/LabResults-8a.png)
 
@@ -829,7 +829,7 @@ We could also use a table here, but since only one line of text requires tabulat
                     
 ```
 
-Test Results section is ready, it should look as in the following picture:
+Test Results section is ready, it should look on the first page as in the following picture:
 
 ![pic-10](../Articles%20Images/LabResults-10.png)
 
@@ -855,7 +855,7 @@ namespace LabResults
         ReportInfoData reportInfoData = JsonConvert.DeserializeObject<ReportInfoData>
             (File.ReadAllText(Path.Combine("Content", "report-info.json")));
 
-        internal void Build(SectionBuilder sectionBuilder)
+        internal void Build(SectionBuilder sectionBuilder, int pageCount)
         {
             sectionBuilder
                 .AddFooterToBothPages(45)
@@ -887,9 +887,12 @@ namespace LabResults
                                         .SetFont(FNT8)
                          .ToRow()
                             .AddCell()
-                                .AddParagraph("Page 1 of 1")
+                                .AddParagraph()
                                     .SetFont(FNT8)
                                     .SetAlignment(HorizontalAlignment.Right)
+                                    .AddPageNumber("Page ")
+                                .ToParagraph()
+                                    .AddText(" of " + pageCount)
                     .ToTable()
                         .AddRow()
                             .AddCell()
@@ -911,11 +914,11 @@ namespace LabResults
 
 ```
 
-First, we insert a 2px horizontal line to distinguish start of the footer. Then, we added a table to put text with tabulation on the same lines into columns. Two parts of the text at the bottom have different horizontal alignment so we can't just add text into paragraphs as we did above. But we can easily specify alignment of the text inside each cell of the table.
+First, we insert a 2px horizontal line to distinguish start of the footer. Then, we add a table to put text with tabulation on the same lines into columns. Two parts of the text at the bottom have different horizontal alignment so we can't just add text into paragraphs as we did above. But we can easily specify alignment of the text inside each cell of the table. Also, `AddPageNumber()` method is used to assign page number to the document pages.
 
-Run the project to view the footer at the bottom of each page of our document:
+Run the project to view the footers at the bottom of each page our document, first page's footer should look as follows:
 
-![pic-12](../Articles%20Images/LabResults-12.png) 
+![pic-11](../Articles%20Images/LabResults-11.png) 
 
 # Summary
 

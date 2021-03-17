@@ -6,12 +6,9 @@ namespace TradeConfirmationData.Model
     {
         public string DocumentDate { get; set; }
         public List<string> FirmContact { get; set; }
-
         public string TaxInfo { get; set; }
         public string ExpensesInfo { get; set; }
-
         public string MoreInfo { get; set; }
-
 
         public override string ToString()
         {
@@ -21,10 +18,7 @@ namespace TradeConfirmationData.Model
                     ", firmcontact: [" + FirmContact.ToString() + "]" +
                      "}";
         }
-
     }
-
-
 }
 
 

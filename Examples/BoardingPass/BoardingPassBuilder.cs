@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.IO;
 using BoardingPass.Model;
+using Gehtsoft.Barcodes.Enums;
 using Gehtsoft.PDFFlow.Builder;
 using Gehtsoft.PDFFlow.Models.Enumerations;
 using Gehtsoft.PDFFlow.Models.Shared;
@@ -110,9 +111,22 @@ namespace BoardingPass
 
         private void FillBarTableCell(TableCellBuilder cellBuilder)
         {
-            AddETK(cellBuilder);
-            cellBuilder
-                .AddImage(Path.Combine("images", "BP_barcode_2x.png"));
+            var rowInner = cellBuilder
+                .AddTable()
+                    .AddColumnToTable()
+                    .AddColumnPercent("", 35)
+                .ToTable()
+                    .AddRow();
+
+            AddETK(rowInner.AddCell());
+
+            rowInner
+                .AddCell()
+                    .AddQRCode("Sample Boarding Pass Powered by Gehtsoft",
+                                QRCodeEncodingMethod.Binary,
+                                QRCodeErrorCorrection.L,
+                                QRCodeVersion.Automatic,
+                                2);
         }
 
         private void AddETK(TableCellBuilder cellBuilder)
@@ -356,8 +370,11 @@ namespace BoardingPass
 
         private void FillBottomBarTableCell(TableCellBuilder cellBuilder)
         {
-            cellBuilder.AddImage(Path.Combine("images", "BP_barcode_vert_2x.png"),
-                XSize.FromHeight(276));
+            cellBuilder.AddQRCode("Sample Boarding Pass Powered by Gehtsoft",
+                                QRCodeEncodingMethod.Binary,
+                                QRCodeErrorCorrection.L,
+                                QRCodeVersion.Automatic,
+                                2);
         }
 
         private BoardingCell[,] GetBoardingItems()

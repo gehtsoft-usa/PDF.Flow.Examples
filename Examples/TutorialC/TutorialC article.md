@@ -17,7 +17,7 @@ To install the framework use the following link: https://dotnet.microsoft.com/do
 
 ### Image files
 
-The document image files is located in the folder **Images\TutorialC**.
+The document image files are located in the folder **Images\TutorialC**.
 
 ### Additional data
 

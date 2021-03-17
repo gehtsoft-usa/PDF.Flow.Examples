@@ -9,7 +9,7 @@ namespace ConcertTicket
     {
         public static DocumentBuilder Run()
         {
-            string ticketJsonFile = CheckFile(Path.Combine("Content", "ticket-data.json"));
+            string ticketJsonFile = CheckFile(Path.Combine("Content", "concert-ticket-data.json"));
             string ticketJsonContent = File.ReadAllText(ticketJsonFile);
             TicketData ticketData =
                JsonConvert.DeserializeObject<TicketData>(ticketJsonContent);

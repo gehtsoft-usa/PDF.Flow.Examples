@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using LogBook.Model;
@@ -31,6 +32,7 @@ namespace LogBook
         private FontBuilder exoItalic;
         private FontBuilder exoBold;
         private readonly IEnumerable<SectionBuilder> _sections;
+        private readonly CultureInfo _culture = new CultureInfo("en-US");
         #endregion Fields
 
         #region Constructors
@@ -136,13 +138,13 @@ namespace LogBook
                 .AddCellToRow(book.Manufacturer)
                 .AddCellToRow(book.Model)
                 .AddCellToRow(book.VIN)
-                .AddCellToRow(book.Received.HasValue ? book.Received.Value.ToString(DateFormat) : "")
+                .AddCellToRow(book.Received.HasValue ? book.Received.Value.ToString(DateFormat, _culture) : "")
                 .AddCell(book.Source);
 
             // Sent
             row
                 .AddCellToRow(book.Code)
-                .AddCellToRow(book.Sent.HasValue ? book.Sent.Value.ToString(DateFormat) : "")
+                .AddCellToRow(book.Sent.HasValue ? book.Sent.Value.ToString(DateFormat, _culture) : "")
                 .AddCellToRow(book.Buyer_Name)
                 .AddCell(book.FullAddress);
 
@@ -269,7 +271,7 @@ namespace LogBook
                     .SetAlignment(HorizontalAlignment.Center)
                     .SetMargins(0, 10, 0, 0)
             .ToSection()
-                .AddParagraph(_options.DateOfPrint.Value.ToString(dateFormat))
+                .AddParagraph(_options.DateOfPrint.Value.ToString(dateFormat, _culture))
                     .SetAlignment(HorizontalAlignment.Center)
                     .SetFont(exoBold)
             .ToSection()
@@ -277,7 +279,7 @@ namespace LogBook
                     .SetAlignment(HorizontalAlignment.Center)
                     .SetMargins(0, 10, 0, 0)
             .ToSection()
-                .AddParagraph(string.Concat(_options.DateRangeStart.Value.ToString(dateFormat), " - ", _options.DateRangeEnd.Value.ToString(dateFormat)))
+                .AddParagraph(string.Concat(_options.DateRangeStart.Value.ToString(dateFormat, _culture), " - ", _options.DateRangeEnd.Value.ToString(dateFormat, _culture)))
                 .SetAlignment(HorizontalAlignment.Center)
                 .SetFont(exoBold)
             .ToSection()
@@ -331,7 +333,7 @@ namespace LogBook
                 if (_options.DisplayDateRange && _options.DateRangeStart.HasValue && _options.DateRangeEnd.HasValue)
                 {
                     dateRangeStr1 = " | Date Range ";
-                    dateRangeStr2 = $"{_options.DateRangeStart.Value.ToString(DateFormat)} - {_options.DateRangeEnd.Value.ToString(DateFormat)}";
+                    dateRangeStr2 = $"{_options.DateRangeStart.Value.ToString(DateFormat, _culture)} - {_options.DateRangeEnd.Value.ToString(DateFormat, _culture)}";
                 }
                 RepeatingAreaBuilder footer;
                 if (isOddPage)
@@ -357,7 +359,7 @@ namespace LogBook
                                    .SetHorizontalAlignment(HorizontalAlignment.Right)
                                    .AddParagraph()
                                         .AddTextToParagraph("Date Of Print ")
-                                            .AddText(_options.DateOfPrint.Value.ToString(DateFormat))
+                                            .AddText(_options.DateOfPrint.Value.ToString(DateFormat, _culture))
                                                 .SetFont(exoBold)
                                     .ToParagraph()
                                         .AddText(dateRangeStr1)

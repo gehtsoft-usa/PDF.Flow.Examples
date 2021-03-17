@@ -14,7 +14,7 @@ namespace TradeConfirmationData.Model
         public string Total { get; set; }
         public string BankQualified { get; set; }
         public string State { get; set; }
-        public string BankQuaified2 { get; set; }
+        public string BankQualified2 { get; set; }
         public string DatedDate { get; set; }
         public string YieldtoMaturity { get; set; }
         public string YieldtoCall { get; set; }
@@ -26,13 +26,12 @@ namespace TradeConfirmationData.Model
         public string SettlementDate { get; set; }
         public string Order { get; set; }
 
-
         public override string ToString()
         {
             return "TradeData{" +
                     "CustomerName=" + CustomerName +
                     ", CustomerAddress: [" + CustomerAddress.ToString() + "]" +
-                     ", Account=" + Account +
+                    ", Account=" + Account +
                     ", Bought=" + Bought +
                     ", Price=" + Price +
                     ", PrincipalAmount=" + PrincipalAmount +
@@ -40,27 +39,21 @@ namespace TradeConfirmationData.Model
                     ", TransactionFee=" + TransactionFee +
                     ", Total=" + Total +
                     "BankQualified=" + BankQualified +
-                     ", State=" + State +
-                    ", BankQuaified2=" + BankQuaified2 +
+                    ", State=" + State +
+                    ", BankQualified2=" + BankQualified2 +
                     ", DatedDate=" + DatedDate +
                     ", YieldtoMaturity=" + YieldtoMaturity +
                     ", YieldtoCall=" + YieldtoCall +
                     ", TaxExempt=" + TaxExempt +
                     "Capacity=" + Capacity +
-                     ", BondForm=" + BondForm +
+                    ", BondForm=" + BondForm +
                     ", TradeDate=" + TradeDate +
                     ", TradeTime=" + TradeTime +
                     ", SettlementDate=" + SettlementDate +
                     ", Order=" + Order +
-
                      "}";
-
         }
-
-
     }
-
-
 }
 
 

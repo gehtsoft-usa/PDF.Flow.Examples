@@ -7,7 +7,6 @@ using System.IO;
 using System.Globalization;
 using Gehtsoft.PDFFlow.UserUtils;
 
-
 namespace ConcertTicket
 {
     internal class ConcertTicketBuilder
@@ -65,7 +64,7 @@ namespace ConcertTicket
             var row1Builder = concertTable.AddRow();
             AddLogoImage(row1Builder.AddCell("", 0, 2));
             AddConcertData(row1Builder.AddCell("", 3, 0)
-                .SetPadding(32, 0, 0, 8));
+                .SetPadding(32, 0, 0, 0));
 
             var row2Builder = concertTable.AddRow();
             row2Builder.AddCell();
@@ -123,7 +122,7 @@ namespace ConcertTicket
             FillTicketDataCounterFoil(row6Builder.AddCell());
             FillPersonalInfoCounterFoil(row6Builder.AddCell());
             row6Builder.AddCell()
-                .AddImage(Path.Combine("images", "Qr_Code.png")).SetWidth(153);
+                .AddQRCodeUrl("https://gehtsoftusa.com/", 4, Color.Black, Color.White, false).SetWidth(153);
 
             var row7Builder = counterFoil.AddRow();
             row7Builder.AddCell();
@@ -135,9 +134,9 @@ namespace ConcertTicket
         private void AddConcertData(TableCellBuilder cellBuilder)
         {
             cellBuilder
-                .AddParagraph("Nick Cave and the Bad Seeds").SetFont(FNT19B);
+                .AddParagraph("Epic Rock Concert").SetFont(FNT19B);
             cellBuilder
-                .AddParagraph("25.05.2021  7:30PM").SetFont(FNT12)
+                .AddParagraph("07/28/2021  9:00PM").SetFont(FNT12)
                 .SetBorderStroke(strokeLeft: Stroke.None, strokeTop: Stroke.None, strokeRight: Stroke.None, strokeBottom: Stroke.Solid)
                 .SetBorderWidth(2);
         }
@@ -147,7 +146,7 @@ namespace ConcertTicket
             cellBuilder
                 .SetPadding(2, 2, 2, 0);
             cellBuilder
-                .AddImage(Path.Combine("images", "СT_Logo.png")).SetHeight(340); 
+                .AddImage(Path.Combine("images", "СT_Poster.png")).SetHeight(340); 
         }
 
         private void No(TableCellBuilder cellBuilder)
@@ -157,7 +156,8 @@ namespace ConcertTicket
             cellBuilder
                 .AddParagraph(TicketData.Eticket).SetLineSpacing(1.5f); 
             cellBuilder
-                .AddImage(Path.Combine("images", "Qr_Code.png")).SetHeight(100);
+                .AddQRCodeUrl("https://gehtsoftusa.com/", 4, 
+                              Color.Black, Color.White, false).SetHeight(100);
         }
 
        private void FillRuleA(int start, int end, TableCellBuilder cellBuilder)
