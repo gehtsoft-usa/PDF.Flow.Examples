@@ -231,8 +231,8 @@ To make the cell span two columns, use the `TableCellBuilder.SetColSpan` method:
             cellBuilder.SetColSpan(2).SetPadding(4, 0, 0, 0);
             paragraphBuilder = cellBuilder.AddParagraph();
             paragraphBuilder
-                .AddInlineImage(Path.Combine(ps.ImageDir, "Healthcare_2x.png"))
-                .SetAlignment(HorizontalAlignment.Right);
+				.SetAlignment(HorizontalAlignment.Right)
+                .AddInlineImage(Path.Combine(ps.ImageDir, "Healthcare_2x.png"));
 ```
 Add the cells with texts to the second row of the table:
 ```csharp

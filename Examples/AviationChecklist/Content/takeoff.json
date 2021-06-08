@@ -1,0 +1,13 @@
+{
+  "Name": "TAKE-OFF CHECKLIST",
+  "TakeoffThrust": "FULL OR TO/GA",
+  "Brakes": "RELEASE",
+  "At100KTS": "SPEED CROSSCHECK",
+  "AtV1": "COMMITED / GO (Decision)",
+  "AtVr": "ROTATE",
+  "Pitch": "slowly to 10deg, increase to 15 deg",
+  "PositiveRateOfClimb": "GEAR UP",
+  "PassingFSpeedPFD": "FLAPS 0",
+  "Spoilers": "DISARM",
+  "LandingLights": "AS REQUIRED"
+}

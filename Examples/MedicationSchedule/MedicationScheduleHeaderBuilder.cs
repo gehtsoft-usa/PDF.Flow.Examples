@@ -190,7 +190,7 @@ namespace MedicationSchedule
                         .SetVerticalAlignment(VerticalAlignment.Center)
                         .AddBarcode("(01)01234567890123", BarcodeType.GS1_128A, 225f, 0,
                             barcodeRotation: BarcodeRotation.Clockwise_90,
-                            hasQuiteZones: false)
+                            hasQuietZones: false)
                             .SetPaddingBottom(10f);
         }
     }

@@ -145,7 +145,7 @@ namespace WarehouseShipmentReport
                     if (level == 2)
                     {
                         p.SetListNumbered(NumerationStyle.Arabic, level, 20f, true);
-                        p.AddBarcode(barcode, BarcodeType.GS1_128C, 186f, 7.9f, hasQuiteZones: false)
+                        p.AddBarcode(barcode, BarcodeType.GS1_128C, 186f, 7.9f, hasQuietZones: false)
                             .SetMarginLeft(5f); 
                     }
 

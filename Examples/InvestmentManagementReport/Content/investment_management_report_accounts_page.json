@@ -1,0 +1,64 @@
+﻿{
+  "Caption": "Additional Information and Endnotes",
+  "CaptionFontSize": 13,
+  "SubCaption": "Accounts Included in This Report",
+  "SubCaptionFontSize": 11,
+  "TotalBeginningValue": "$88,0853.95",
+  "TotalEndingValue": "$103,351.18",
+  "AccountsTable": {
+    "Columns": [
+      {
+        "Title": "Page",
+        "IsRightAligned": false
+      },
+      {
+        "Title": "Account Type/Name",
+        "IsRightAligned": false
+      },
+      {
+        "Title": "Account Number",
+        "IsRightAligned": false
+      },
+      {
+        "Title": "Beginning Value",
+        "IsRightAligned": false
+      },
+      {
+        "Title": "Ending Value",
+        "IsRightAligned": true
+      }
+    ],
+    "Data": [
+      {
+      "ValueColumn1": "GENERAL INVESTMENTS",
+	  "IsStart": true
+      },
+      {
+      "ValueColumn0": "3",
+      "ValueColumn1": "John W. Smith - Individual",
+      "ValueColumn2": "111-111111",
+      "ValueColumn3": "$88,0853.95",
+      "ValueColumn4": "$103,351.18"
+      },
+      {
+      "ValueColumn1": "Total Portfolio",
+      "ValueColumn3": "$88,0853.95",
+      "ValueColumn4": "$103,351.18",
+	  "IsEnd": true
+      }	  
+    ]
+  },
+  "BottomBlockTitle": "Do more with your money.",
+  "BottomBlockText": "Transfer funds, pay bills, earn credit card rewards and more. Learn more about the Cash Management Account by calling 1-800-SAMPLE or visit \nsamplecompany.com/cashmanagement \n\nThe SampleCompany Portfolio Advisory Service account offers professional money management and access to our proprietary research through model portfolios of mutual funds. Get a complimentary investment proposal by calling SampleCompany at 800-123-4567.",
+  "BottomBlockFontSize": 9,
+  "TableNotes": [
+    {
+      "Name": "*",
+      "Value": "Includes transfers between Sample Company accounts."
+    },
+    {
+      "Name": "**",
+      "Value": "Appreciation or depreciation of your holdings due to price changes plus any distribution and income earned during the statement period."
+    }
+  ]
+}

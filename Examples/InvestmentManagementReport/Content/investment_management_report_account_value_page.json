@@ -1,0 +1,45 @@
+﻿{
+    "AccountValueChange": "$15,297.23",
+    "AccountValueTable": [
+        {
+            "Name": "Beginning Account Value",
+            "ValueColumn1": "",
+            "ValueColumn2": "",
+            "HasBottomMargin": true
+        },
+        {
+            "Name": "Dividents",
+            "ValueColumn1": "",
+            "ValueColumn2": "",
+            "IsSubItem": true
+        },
+
+        {
+            "Name": "Total",
+            "ValueColumn1": "",
+            "ValueColumn2": "",
+            "IsTotal": true
+        }
+    ],
+    "TopHoldings": [
+        {
+            "Name": "Johnson & Johnson (JNJ)",
+            "ValueColumn1": "",
+            "ValueColumn2": ""
+        },
+
+        {
+            "Name": "Total",
+            "ValueColumn1": "",
+            "ValueColumn2": "",
+            "IsTotal": true
+        }
+    ],
+    "AssetAllocation": [
+        {
+            "Name": "Domestic Stock",
+            "ValueColumn1": "42%"
+        }
+    ],
+    "ImportantNote": "IMPORTANT: If you have..."
+}

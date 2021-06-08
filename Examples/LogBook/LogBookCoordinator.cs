@@ -244,6 +244,7 @@ namespace LogBook
                 .AddHeaderRow()
                 .ApplyStyle(style)                        
                 .SetMinHeight(25)
+                .SetVerticalAlignment(VerticalAlignment.Top)
                 .AddCellToRow("")
                 .AddCellToRow("Description of model", 5)
                 .AddCellToRow("")

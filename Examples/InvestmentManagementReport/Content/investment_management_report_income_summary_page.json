@@ -1,0 +1,130 @@
+﻿{
+  "IncomeSummary": [
+    {
+      "Name": "Taxable",
+      "ValueColumn1": "$178.53",
+      "ValueColumn2": "$2,839.92"
+    },
+    {
+      "Name": "Dividends",
+      "ValueColumn1": "178.53",
+      "ValueColumn2": "1,548.74",
+      "IsSubItem": true
+    },
+    {
+      "Name": "Interest",
+      "ValueColumn1": "—",
+      "ValueColumn2": "10.25",
+      "IsSubItem": true
+    },
+    {
+      "Name": "Short-term Capital Gains",
+      "ValueColumn1": "—",
+      "ValueColumn2": "255.68",
+      "IsSubItem": true
+    },
+    {
+      "Name": "Long-term Capital Gains",
+      "ValueColumn1": "—",
+      "ValueColumn2": "1,025.25",
+      "IsSubItem": true
+    },
+    {
+      "Name": "Tax-exempt",
+      "ValueColumn1": "$372.10",
+      "ValueColumn2": "$3,384.74"
+    },
+    {
+      "Name": "Dividends",
+      "ValueColumn1": "—",
+      "ValueColumn2": "1,725.87",
+      "IsSubItem": true
+    },
+    {
+      "Name": "Interest",
+      "ValueColumn1": "372.10",
+      "ValueColumn2": "1,658.87",
+      "IsSubItem": true
+    },
+    {
+      "Name": "Tax-deferred",
+      "ValueColumn1": "$500.31",
+      "ValueColumn2": "$7,020.49"
+    },
+    {
+      "Name": "Return of Capital",
+      "ValueColumn1": "$4,000.00",
+      "ValueColumn2": "$8,500.00"
+    },
+    {
+      "Name": "Liquidations",
+      "ValueColumn1": "—",
+      "ValueColumn2": "$1,576.16"
+    },
+    {
+      "Name": "Total",
+      "ValueColumn1": "$5,050.94",
+      "ValueColumn2": "$23,278.62",
+      "IsTotal": true
+    }
+  ],
+
+  "TopHoldings": [
+    {
+      "Name": "Johnson & Johnson (JNJ)",
+      "ValueColumn1": "$47,113.80",
+      "ValueColumn2": "17%"
+    },
+    {
+      "Name": "Delphi  Corp",
+      "ValueColumn1": "28,892.05",
+      "ValueColumn2": "9"
+    },
+    {
+      "Name": "Apple Inc (AAPL)",
+      "ValueColumn1": "21,221.14",
+      "ValueColumn2": "7"
+    },
+    {
+      "Name": "Jr Sb Nt Slm Corp",
+      "ValueColumn1": "15,375.00",
+      "ValueColumn2": "5"
+    },
+    {
+      "Name": "Spi Lkd Nt (OSM)",
+      "ValueColumn1": "13,859.10",
+      "ValueColumn2": "5"
+    },
+    {
+      "Name": "Total",
+      "ValueColumn1": "$126,461.09",
+      "ValueColumn2": "45%",
+      "IsTotal": true
+    }
+  ],
+
+  "AssetAllocation": [
+    {
+      "Name": "Domestic Stock",
+      "ValueColumn1": "42%"
+    },
+    {
+      "Name": "Foreign Stock",
+      "ValueColumn1": "28"
+    },
+    {
+      "Name": "Bonds",
+      "ValueColumn1": "20"
+    },
+    {
+      "Name": "Short-term",
+      "ValueColumn1": "6"
+    },
+    {
+      "Name": "Other",
+      "ValueColumn1": "4"
+    }
+  ],
+
+  "ImportantNote": "IMPORTANT: If you have any unsettled trades pending, the asset allocation presented above may be materially impacted and, depending on the size and scope of such unsettled trades, rendered unreliable. Asset allocation includes Other Holdings and Assets Held Away when applicable. Please note that, due to rounding, percentages may not add to 100%. For further details, please see \"Frequently Asked Questions\" at Fidelity.com/Statements."
+}

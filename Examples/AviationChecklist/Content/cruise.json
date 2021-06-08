@@ -1,0 +1,23 @@
+{
+  "Name": "CRUISE CHECKLIST",
+  "EngineAndInstruments": "MONITOR",
+  "FuelQuantity": "CHECK",
+  "Radios1": "TUNED & SET",
+  "Autopilot": "CHECK & SET",
+  "Lights": "AS REQUIRED",
+  "ATISAirportInformation": "CHECK",
+  "Altimeter1": "CHECK",
+  "Radios2": "SET",
+  "DeIce": "AS REQUIRED",
+  "TOD": "SET TCAS TO BELOW",
+  "DescentSpeed": "NORMAL",
+  "FL240": "0.76 MACH",
+  "FL180": "0.67 MACH",
+  "Altimeter2": "RESET TO LOCAL",
+  "FL120": "280 KIAS",
+  "Speed": "250 KIAS",
+  "LandingLights": "ON",
+  "LS": "ON",
+  "FuelQuantitiesAndBalance": "CHECK",
+  "FlapsLandingGear": "CHECK UP"
+}

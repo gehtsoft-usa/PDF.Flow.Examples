@@ -1,0 +1,13 @@
+{
+  "Name": "LANDING CHECKLIST",
+  "LandingGear": "CHECK DOWN",
+  "Autopilot": "AS REQUIRED",
+  "GoAroundAltitude": "SET IN FCU",
+  "AutoThrust": "AS REQUIRED",
+  "LandingMemo": "NO BLUE",
+  "LandingSpeed": "MANAGED",
+  "AfterTouchDown": "REVERSE THRUST",
+  "Spoilers": "VERIFY EXTENDED",
+  "Brakes": "AS REQUIRED",
+  "At60KIAS": "CANCEL REVERSE THRUST"
+}

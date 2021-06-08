@@ -1,0 +1,16 @@
+{
+  "Name": "AFTER LANDING CHECKLIST",
+  "Spoilers": "DISARMED",
+  "Flaps": "RETRACT",
+  "EngModeSelector": "NORM",
+  "LandingLights": "OFF",
+  "StrobeLights": "OFF",
+  "AntiIce": "AS REQUIRED",
+  "APU1": "START",
+  "BrakeTemp": "CHECK",
+  "Transponder": "OFF",
+  "APU2": "START / CHECK RUN",
+  "APU3": "GET ON / CHECK VOLTS",
+  "ElevatorTrim": "TAKEOFF SETTING",
+  "TaxiLights": "OFF"
+}

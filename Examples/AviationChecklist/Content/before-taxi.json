@@ -1,0 +1,12 @@
+{
+  "Name": "BEFORE TAXI CHECKLIST",
+  "ProbeWindowHeat": "AUTO",
+  "HDGIndicatorAltimeters": "SET",
+  "STDByInstruments": "SET",
+  "RadiosAndAvionics": "SET FOR DEPARTURE",
+  "Autopilot": "SET, don't activate",
+  "FD": "ON",
+  "Autobrake": "MAX",
+  "ElevatorTrim": "SET FOR TAKE-OFF",
+  "FlightControls": "FREE AND CORRECT"
+}

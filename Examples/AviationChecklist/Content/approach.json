@@ -1,0 +1,20 @@
+{
+  "Name": "APPROACH CHECKLIST",
+  "FastenSeatBelts": "ON",
+  "Radios": "SET",
+  "Speed1": "ESTABLISH 210 KIAS",
+  "LandingLights": "CHECK ON",
+  "TaxiLights": "ON",
+  "GNDSpoilers": "ARM",
+  "AutoBrake": "SET",
+  "Flaps1": "FLAPS 1",
+  "Speed2": "MANAGED",
+  "At6DME": "FLAPS 2",
+  "Speed3": "ESTABLISH 180 KIAS",
+  "LandingGear": "DOWN",
+  "LandingGear3Green": "FLAPS 3",
+  "Flaps2": "FULL",
+  "Speed4": "ESTABLISH 145 KIAS",
+  "ParkingBrake": "VERIFY OFF",
+  "DeIce": "AS REQUIRED"
+}

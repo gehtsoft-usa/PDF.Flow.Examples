@@ -1,0 +1,13 @@
+{
+  "Name": "BEFORE TAKE-OFF CHECKLIST",
+  "ParkingBrake": "SET",
+  "FlightInstruments": "CHECK",
+  "EngineInstruments": "CHECK",
+  "TakeOffData": "(V1, VR, V2) CHECK",
+  "NavEquipment": "CHECK",
+  "LandingLights": "ON",
+  "StrobeLight": "ON",
+  "PitotHeat": "AUTO",
+  "DeIce": "AS REQUIRED",
+  "Transponder": "TA/RA"
+}

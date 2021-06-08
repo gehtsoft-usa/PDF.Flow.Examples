@@ -1,0 +1,11 @@
+{
+  "Name": "CLIMB-OUT CHECKLIST",
+  "ThrustLevers": "CLB DETENT",
+  "AP1": "ENGAGE (when suitable)",
+  "TaxiLights": "OFF",
+  "Altimeter": "PULL TO SET STD (22.92 / 1013)",
+  "Below10000Ft": "MAX 250 KIAS",
+  "ATC": "AS REQUIRED",
+  "LandingLights": "OFF",
+  "FastenSeatBelts": "OFF"
+}

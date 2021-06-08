@@ -1,0 +1,21 @@
+{
+  "Name": "STARTUP CHECKLIST",
+  "APU1": "START",
+  "APUBleed": "RUN (WHEN AVAILABLE)",
+  "APUGen": "ON / CHECK VOLTS",
+  "ThrustLevers": "IDLE",
+  "EngineArea": "CLEAR",
+  "FuelPumpSwitches": "ON",
+  "ModeSelector1": "IGN / START",
+  "LeftEngine": "(ENG 1)",
+  "EngineMaster1": "START",
+  "AtHighN2FuelFlow": "CHECK ON",
+  "N1IncreaseAsN2Increase": "CHECK",
+  "OilPressure": "CHECK",
+  "GeneratorSwitch": "ON",
+  "RepeatForRightEngine": "(ENG2)",
+  "FuelFlow": "CHECK",
+  "HydraulicPumpSwitches": "ON",
+  "APU2": "OFF",
+  "ModeSelector2": "NORM"
+}

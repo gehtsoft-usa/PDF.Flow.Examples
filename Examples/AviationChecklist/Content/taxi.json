@@ -1,0 +1,9 @@
+{
+  "Name": "TAXI CHECKLIST",
+  "TaxiLights": "ON",
+  "ParkingBrake": "RELEASE",
+  "TaxiToAssignedRunway": "SPEED Max. 20 knots",
+  "BreaksGyroTurnCoordinator": "CHECK during taxi",
+  "TOConfig": "DEPRESS / CHECK",
+  "TOMemo": "GREEN"
+}

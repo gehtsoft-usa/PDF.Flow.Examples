@@ -40,14 +40,14 @@ namespace MedicalBill
             cellBuilder.SetPadding(4, 0, 4, 0);
             paragraphBuilder = cellBuilder.AddParagraph();
             paragraphBuilder
-                .AddInlineImage(Path.Combine(ps.ImageDir, "Clinicare_2x.png"))
-                .SetAlignment(HorizontalAlignment.Center);
+                .SetAlignment(HorizontalAlignment.Center)
+                .AddInlineImage(Path.Combine(ps.ImageDir, "Clinicare_2x.png"));
             cellBuilder = rowBuilder.AddCell();
-            cellBuilder.SetColSpan(2).SetPadding(4, 0, 0, 0);
+            cellBuilder.SetColSpan(2).SetPadding(4, 0, 0, 28.5f);
             paragraphBuilder = cellBuilder.AddParagraph();
             paragraphBuilder
-                .AddInlineImage(Path.Combine(ps.ImageDir, "Healthcare_2x.png"))
-                .SetAlignment(HorizontalAlignment.Right);
+                .SetAlignment(HorizontalAlignment.Right)
+                .AddInlineImage(Path.Combine(ps.ImageDir, "Healthcare_2x.png"));
             rowBuilder = tableBuilder.AddRow();
             cellBuilder = rowBuilder.AddCell();
             cellBuilder

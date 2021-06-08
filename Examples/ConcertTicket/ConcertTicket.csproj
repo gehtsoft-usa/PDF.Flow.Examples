@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Gehtsoft.PDFFlowLib" Version="2.1.0" />
+    <PackageReference Include="Gehtsoft.PDFFlowLib" Version="2.1.1" />
     <PackageReference Include="Gehtsoft.PDFFlowLib.Barcodes" Version="1.0.0" />
-    <PackageReference Include="Haru.Net" Version="1.0.10" />
+    <PackageReference Include="Haru.Net" Version="1.0.11" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />

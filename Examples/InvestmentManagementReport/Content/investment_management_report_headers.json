@@ -1,0 +1,11 @@
+﻿{
+  "CompanyName": "Sample company",
+  "DocumentName": "Investment report",
+  "FullNameShort": "John Smith",
+  "FullNameTrust": "John Smith TRUST",
+  "UnderAgreementDated": "U/A DTD 01/22/1991",
+  "AccountNumber": "1111-9999",
+  "StatementPeriodStart": "Jan 01, 2021",
+  "StatementPeriodEnd": "Jan 30, 2021",
+  "FooterText": "Brokerage services provided by Sample Company LLC, Member NYSE, SIPC (800) 544-6666.  Brokerage accounts carried with National Financial Services LLC (NFS), Member NYSE, SIPC."
+}

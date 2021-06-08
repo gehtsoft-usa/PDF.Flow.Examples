@@ -1,0 +1,84 @@
+﻿{
+  "PortfolioValue": "$274,222.20",
+  "ChangeFromLastPeriod": "▲ $21,000.37",
+  "FullName": "John W. Smith",
+  "EnvelopeNumber": "BABCEJBBPRTLA",
+  "AddressFirstLine": "879 Geraldine Lane",
+  "AddressSecondLine": "Bethpage, NY 11714",
+  "ContactInformation": [
+    {
+      "Name": "Online",
+      "Value": "SampleCompany.com"
+    },
+    {
+      "Name": "Automated Telephone",
+      "Value": "(800) 1234-4567"
+    },
+    {
+      "Name": "Private Client Group",
+      "Value": "(800) 1234-4568"
+    }
+  ],
+  "WelcomeTitle": "Welcome to your new Sample Company statement.", 
+  "WelcomeText": "Your account numbers can be found on page 2 in the Accounts Included in this Report section. Your statement also has a new look and more information. We hope you find the changes beneficialand we look forward to hearing your feedback.",
+  "PortfolioTable": {
+    "Columns": [
+      {
+        "ColSpan": 2
+      },
+      {
+        "Title": "This period",
+        "IsRightAligned": true
+      },
+      {
+        "Title": "Year-to-Date",
+        "IsRightAligned": true
+      }
+    ],
+    "Data": [
+      {
+        "ValueColumn0": "Beginning Portfolio Value",
+        "ValueColumn1": "$253,221.83",
+        "ValueColumn2": "$232,643.16",
+        "IsStart": true
+      },
+      {
+        "ValueColumn0": "Additions",
+        "ValueColumn1": "59,269.64",
+        "ValueColumn2": "121,433.55"
+      },
+      {
+        "ValueColumn0": "Subtractions",
+        "ValueColumn1": "-45,430.74",
+        "ValueColumn2": "-98,912.58"
+      },
+      {
+        "ValueColumn0": "Transaction Costs, Feed & Charges",
+        "ValueColumn1": "-139.77",
+        "ValueColumn2": "-625.87",
+        "IsSubItem": true
+      },
+      {
+        "ValueColumn0": "Change in Investment Value*",
+        "ValueColumn1": "7,161.47",
+        "ValueColumn2": "19,058.07"
+      },
+      {
+        "ValueColumn0": "Ending Portfolio Value**",
+        "ValueColumn1": "$274,222.20",
+        "ValueColumn2": "$274,222.20",
+        "IsEnd": true
+      }
+    ]
+  },
+  "TableNotes": [
+    {
+      "Name": "*",
+      "Value": "Appreciation or depreciation of your holdings due to price changes plus any distribution and income earned during the statement period."
+    },
+    {
+      "Name": "**",
+      "Value": "Excludes unpriced securities."
+    }
+  ]
+}
