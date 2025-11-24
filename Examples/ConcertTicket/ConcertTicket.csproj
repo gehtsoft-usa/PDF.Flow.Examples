@@ -4,12 +4,11 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <LangVersion>latestmajor</LangVersion>
-    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Gehtsoft.PDFFlowLib" Version="3.0.0" />
-    <PackageReference Include="Gehtsoft.PDFFlowLib.Barcodes" Version="2.0.0" />
+    <PackageReference Include="Gehtsoft.PDFFlowLib" Version="3.0.1" />
+    <PackageReference Include="Gehtsoft.PDFFlowLib.Barcodes" Version="2.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.10" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.10" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />

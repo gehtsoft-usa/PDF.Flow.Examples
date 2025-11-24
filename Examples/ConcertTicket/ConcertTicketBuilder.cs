@@ -11,8 +11,8 @@ namespace ConcertTicket
 {
     internal class ConcertTicketBuilder
     {
-        public TicketData TicketData { get; internal set; }
-        public ConcertData ConcertData { get; internal set; }
+        public TicketData TicketData { get; internal set; } = null!;
+        public ConcertData ConcertData { get; internal set; } = null!;
 
         internal static readonly CultureInfo DocumentLocale  
             = new CultureInfo("en-US");
@@ -93,7 +93,7 @@ namespace ConcertTicket
             var row4Builder = infoTable.AddRow();
             FillBandlist(row4Builder.AddCell("").SetFont(FNT12));
             row4Builder.AddCell("")
-                .AddImage(Path.Combine("images", "CT_Location.png")).SetHeight(400)
+                .AddImage(Path.Combine("images", "CT_Location.png")).SetHeight(200)
                 .SetMarginTop(9);
             AddContactInfo(row4Builder.AddCell("").SetFont(FNT12));
         }
@@ -122,7 +122,7 @@ namespace ConcertTicket
             FillTicketDataCounterFoil(row6Builder.AddCell());
             FillPersonalInfoCounterFoil(row6Builder.AddCell());
             row6Builder.AddCell()
-                .AddQRCodeUrl("https://gehtsoftusa.com/", 4, Color.Black, Color.White, false).SetWidth(153);
+                .AddQRCodeUrl("https://gehtsoftusa.com/", 4, Color.Black, Color.White, false).SetWidth(75);
 
             var row7Builder = counterFoil.AddRow();
             row7Builder.AddCell();

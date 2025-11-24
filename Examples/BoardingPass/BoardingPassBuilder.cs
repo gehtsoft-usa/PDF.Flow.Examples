@@ -126,7 +126,7 @@ namespace BoardingPass
                                 QRCodeEncodingMethod.Binary,
                                 QRCodeErrorCorrection.L,
                                 QRCodeVersion.Automatic,
-                                2);
+                                2).SetWidth(60);
         }
 
         private void AddETK(TableCellBuilder cellBuilder)

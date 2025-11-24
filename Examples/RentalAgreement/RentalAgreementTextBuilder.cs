@@ -82,7 +82,7 @@ namespace RentalAgreement
                 RepeatingAreaPriority.Vertical);
             BuildHeader(
                 sectionBuilder.AddHeaderToBothPages(80), PageWidth);
-            BuildFooterBar(sectionBuilder.AddFooterToBothPages(90), 86);
+            BuildFooterBar(sectionBuilder.AddFooterToBothPages(90), 54);
             BuildEqualHousingOpportunity(
                 sectionBuilder.AddRptAreaLeftToBothPages(65), PageHeight);
             sectionBuilder

@@ -41,7 +41,7 @@ namespace InvestmentManagementReport
                 .AddCell()
                 .SetHorizontalAlignment(HorizontalAlignment.Center)
                 .SetVerticalAlignment(VerticalAlignment.Center)
-                    .AddImage(Path.Combine(Directory.GetCurrentDirectory(), "Images", "InvestmentManagementReportLogo.png"), 45f, 45f, ScalingMode.UserDefined);
+                    .AddImage(Path.Combine(Directory.GetCurrentDirectory(), "images", "InvestmentManagementReportLogo.png"), 45f, 45f, ScalingMode.UserDefined);
             // Add company name and document name
             rowBuilder
                 .AddCell()

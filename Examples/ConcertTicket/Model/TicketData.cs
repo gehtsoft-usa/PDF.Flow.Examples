@@ -2,14 +2,14 @@
 {
     public class TicketData
     {
-        public string Eticket { get; set; }
+        public string Eticket { get; set; } = null!;
 
-        public string Admission { get; set; }
-        public string TicketType { get; set; }
-        public string Price { get; set; }
-        public string Name { get; set; }
-        public string Venue { get; set; }
-        public string Address { get; set; }
+        public string Admission { get; set; } = null!;
+        public string TicketType { get; set; } = null!;
+        public string Price { get; set; } = null!;
+        public string Name { get; set; } = null!;
+        public string Venue { get; set; } = null!;
+        public string Address { get; set; } = null!;
 
 
 

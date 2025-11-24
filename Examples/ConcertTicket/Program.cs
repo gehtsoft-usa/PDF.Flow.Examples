@@ -8,7 +8,7 @@ namespace ConcertTicket
     {
         static int Main(string[] args)
         {
-            Parameters parameters = new Parameters(null, "ConcertTicket.pdf");
+            Parameters parameters = new Parameters(null!, "ConcertTicket.pdf");
 
             if (!PrepareParameters(parameters, args))
             {

@@ -12,13 +12,13 @@ namespace ConcertTicket
             string ticketJsonFile = CheckFile(Path.Combine("Content", "concert-ticket-data.json"));
             string ticketJsonContent = File.ReadAllText(ticketJsonFile);
             TicketData ticketData =
-               JsonConvert.DeserializeObject<TicketData>(ticketJsonContent);
+               JsonConvert.DeserializeObject<TicketData>(ticketJsonContent)!;
 
             string jsonFile = CheckFile(Path.Combine("Content", "concert-data.json"));
             string jsonContent = File.ReadAllText(jsonFile);
 
             ConcertData concertData =
-               JsonConvert.DeserializeObject<ConcertData>(jsonContent);
+               JsonConvert.DeserializeObject<ConcertData>(jsonContent)!;
 
             ConcertTicketBuilder ConcertTicketBuilder = 
                 new ConcertTicketBuilder();

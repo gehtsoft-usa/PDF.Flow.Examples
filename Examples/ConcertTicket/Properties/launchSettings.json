@@ -2,7 +2,7 @@
   "profiles": {
     "ConcertTicket": {
       "commandName": "Project",
-      "commandLineArgs": "..\\..\\..\\ConcertTicket.pdf chrome"
+      "commandLineArgs": "../../../ConcertTicket.pdf chrome"
     }
   }
 }
